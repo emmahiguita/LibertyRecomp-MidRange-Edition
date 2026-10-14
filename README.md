@@ -168,17 +168,9 @@ El instalador integrado detecta y extrae los componentes automáticamente:
      Android/data/com.libertyrecomp/files/install/
      ```
   3. Abre la app: el launcher detecta los archivos automáticamente, realiza la extracción e instala el juego sin pedirte buscar rutas.
-   The tested files ([details](#game-files-required)):
-   - disc: `Grand Theft Auto IV (USA) (En,Fr,De,Es,It).iso`, MD5 `f0a046aed1520a913b2125f0a69ee7d0`
-   - TU8: `TU_1A581VI_000000K000000.0000000000205`, MD5 `f041b5f6721d7ee578560bac21668826`
+    The file names do not matter, as long as the disc image ends in `.iso`.
 
-   The file names do not matter, as long as the disc image ends in `.iso`.
-3. Press **Install**, wait for it to finish, then press **Play**.
-
-![Installing from the launcher](docs/android/images/launcher_install_v2.png)
-
-The full walkthrough, including the `install/` folder and older versions, is in
-[INSTALL.md](docs/android/INSTALL.md).
+Una vez instalado, el juego ocupa aproximadamente 6.5 GB. La guía técnica detallada paso a paso se encuentra en [INSTALL.md](docs/android/INSTALL.md).
 
 ## Documentation
 
