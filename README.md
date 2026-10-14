@@ -128,36 +128,46 @@ Settings in `args.txt` (see [ADVANCED.md](docs/android/ADVANCED.md#other-useful-
 - `--gta4_touch_layout=context` brings back upstream's context-sensitive touch layout instead of
   the gamepad.
 
-## Game files required
+## Game files required & Download reference
 
-- The **Xbox 360 GTA IV disc** as an `.iso` image. Only the **USA (NTSC-U)** release has been
-  verified.
-- **Title Update 8** for that release (version **0.0.8.5**), either as the STFS package or as a raw
-  `default.xexp`. The PAL title update (0.0.8.6) is rejected.
+The port requires the original Xbox 360 files:
+1. **The Xbox 360 GTA IV disc (.iso):** Must be the **USA (NTSC-U)** retail release.
+   - Reference source: [Vimm's Lair - Grand Theft Auto IV (Xbox 360)](https://vimm.net/vault/78373)
+   - Tested filename: `Grand Theft Auto IV (USA) (En,Fr,De,Es,It).iso` (~7.8 GB)
+   - MD5: `f0a046aed1520a913b2125f0a69ee7d0`
+2. **Title Update 8 (TU8):** Version **0.0.8.5** for the USA release (`TU_1A581VI_000000K000000.0000000000205` or raw `default.xexp`).
 
-The port was developed and tested with these exact files:
+---
 
-| File | Size | MD5 | SHA-1 |
-|---|---|---|---|
-| `Grand Theft Auto IV (USA) (En,Fr,De,Es,It).iso` (full disc image) | 7,835,492,352 bytes | `f0a046aed1520a913b2125f0a69ee7d0` | `caa48dfb3b1b2fe3131e61fc66e35a22c6d0ba13` |
-| `TU_1A581VI_000000K000000.0000000000205` (Title Update 8, STFS package) | 3,715,072 bytes | `f041b5f6721d7ee578560bac21668826` | `88d1c438814298b6da987b3ad5edc7e48a769ac9` |
+## 🚀 Guía de Instalación Rápida y Automatizada (Android / OPPO)
 
-If your files match, they are known to work. Other dumps of the same USA disc (for example
-trimmed or extracted images) may work too, but they have not been tested. Check your files with
-`certutil -hashfile <file> MD5` on Windows, or `md5sum <file>` on Linux and macOS.
+El instalador integrado detecta y extrae los componentes automáticamente:
 
-See the upstream [dumping guide](docs/DUMPING-en.md) for how to get these files from your own
-console and disc.
+### Paso 1: Instalar el APK
+1. Descarga el APK desde la sección de **[Releases](https://github.com/emmahiguita/LibertyRecomp-MidRange-Edition/releases)**:
+   - `LibertyRecompAndroid-v0.5.8.apk` (Recomendado para procesadores Snapdragon / Adreno).
+   - `LibertyRecompAndroid-v0.5.8-mali-patched.apk` (Para procesadores Dimensity / GPUs Mali).
+2. Abre el archivo en tu teléfono y concede permiso para instalar apps de fuentes desconocidas.
 
-## Quick start
+### Paso 2: Colocar los archivos del juego (2 Métodos a elegir)
 
-1. Install `LibertyRecompAndroid-*.apk` from the [Releases](../../releases) page and open it. The
-   app opens on a launcher with the game status, the installer, the Vulkan driver choice and
-   **Play** (see [INSTALL.md](docs/android/INSTALL.md#2-open-the-app-the-launcher)).
-2. In the **Game** panel (0.5.7 and newer), choose your disc image (`*.iso`) and the Title Update 8
-   file wherever they are on the device. The app asks once for *All files access*. On older
-   versions, or without that permission, copy both into
-   `Android/data/com.libertyrecomp/files/install/` instead (a PC over USB is the easiest way).
+* **Método A (Automático desde el Launcher - Recomendado):**
+  1. Descarga tu copia `.iso` (por ejemplo desde [Vimm's Lair](https://vimm.net/vault/78373)) y el Title Update 8 en tu carpeta de **Descargas (Download)**.
+  2. Abre la app **Liberty Recompiled**.
+  3. En **Base game**, presiona **Choose file...** y selecciona tu archivo `.iso`. La app comprobará el archivo y mostrará una confirmación en verde:  
+     `Detected: Grand Theft Auto IV — USA — Retail 1.00 — Supported`.
+  4. En **Title Update 8**, selecciona el archivo de la actualización.
+  5. Presiona **Install**. El sistema extraerá e instalará automáticamente el juego en 1–3 minutos.
+  6. El botón **Play** se iluminará en blanco: ¡Tócalo y a jugar!
+  *(Una vez instalado, puedes borrar el archivo `.iso` de 7.8 GB de tu teléfono para liberar espacio).*
+
+* **Método B (Carpeta `install/` - 100% Automático sin selector):**
+  1. Conecta el teléfono al PC o usa un gestor de archivos.
+  2. Copia tu archivo `.iso` y el Title Update directamente en:
+     ```text
+     Android/data/com.libertyrecomp/files/install/
+     ```
+  3. Abre la app: el launcher detecta los archivos automáticamente, realiza la extracción e instala el juego sin pedirte buscar rutas.
    The tested files ([details](#game-files-required)):
    - disc: `Grand Theft Auto IV (USA) (En,Fr,De,Es,It).iso`, MD5 `f0a046aed1520a913b2125f0a69ee7d0`
    - TU8: `TU_1A581VI_000000K000000.0000000000205`, MD5 `f041b5f6721d7ee578560bac21668826`
