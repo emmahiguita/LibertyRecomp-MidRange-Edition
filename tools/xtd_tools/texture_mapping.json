@@ -1,0 +1,36 @@
+{
+  "base_textures": [
+    "a_butt", "b_butt", "x_butt", "y_butt",
+    "back_butt", "start_butt",
+    "lb_butt", "rb_butt", "lt_butt", "rt_butt",
+    "dpad_all", "dpad_down", "dpad_left", "dpad_right", "dpad_up",
+    "dpad_leftright", "dpad_updown", "dpad_none",
+    "lstick_all", "lstick_down", "lstick_left", "lstick_right", "lstick_up",
+    "lstick_leftright", "lstick_updown", "lstick_none",
+    "rstick_all", "rstick_down", "rstick_left", "rstick_right", "rstick_up",
+    "rstick_leftright", "rstick_updown", "rstick_none",
+    "up_arrow", "down_arrow", "left_arrow", "right_arrow",
+    "controller", "controller_clean"
+  ],
+  "controller_prefixes": {
+    "xbox360": "",
+    "ps3": "ps3_",
+    "ps4": "ps4_",
+    "ps5": "ps5_",
+    "steam_controller": "sc_",
+    "steam_deck": "sd_",
+    "switch": "switch_",
+    "xbox_one": "xbone_",
+    "xbox_series_x": "xsx_"
+  },
+  "output_folders": {
+    "ps3": "PS3",
+    "ps4": "PS4",
+    "ps5": "PS5",
+    "steam_controller": "SteamController",
+    "steam_deck": "SteamDeck",
+    "switch": "Switch",
+    "xbox_one": "XboxOne",
+    "xbox_series_x": "XboxSeriesX"
+  }
+}

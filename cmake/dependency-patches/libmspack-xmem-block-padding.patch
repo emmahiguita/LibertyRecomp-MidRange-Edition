@@ -1,0 +1,34 @@
+diff --git a/libmspack/mspack/lzx.h b/libmspack/mspack/lzx.h
+--- a/libmspack/mspack/lzx.h
++++ b/libmspack/mspack/lzx.h
+@@ -73,6 +73,9 @@
+   unsigned char  header_read;     /* have we started decoding at all yet?    */
+   unsigned char  input_end;       /* have we reached the end of input?       */
+   unsigned char  is_delta;        /* does stream follow LZX DELTA spec?      */
++  /* CAB/CHM raw blocks pad odd lengths; Xbox XMem blocks do not.
++   * Default is 1. Set to 0 before decoding an Xbox XMem stream. */
++  unsigned char  uncompressed_block_padding;
+ 
+   int error;
+ 
+diff --git a/libmspack/mspack/lzxd.c b/libmspack/mspack/lzxd.c
+--- a/libmspack/mspack/lzxd.c
++++ b/libmspack/mspack/lzxd.c
+@@ -338,6 +338,7 @@
+   lzx->error           = MSPACK_ERR_OK;
+   lzx->num_offsets     = position_slots[window_bits - 15] << 3;
+   lzx->is_delta        = is_delta;
++  lzx->uncompressed_block_padding = 1;
+ 
+   lzx->o_ptr = lzx->o_end = &lzx->e8_buf[0];
+   lzxd_reset_state(lzx);
+@@ -466,7 +467,8 @@
+       /* initialise new block, if one is needed */
+       if (lzx->block_remaining == 0) {
+         /* realign if previous block was an odd-sized UNCOMPRESSED block */
+-        if ((lzx->block_type == LZX_BLOCKTYPE_UNCOMPRESSED) &&
++        if (lzx->uncompressed_block_padding &&
++            (lzx->block_type == LZX_BLOCKTYPE_UNCOMPRESSED) &&
+             (lzx->block_length & 1))
+         {
+           READ_IF_NEEDED;

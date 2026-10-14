@@ -1,0 +1,3619 @@
+{
+  "version": 1,
+  "overrides": [
+    {
+      "stage": "pixel",
+      "hash": "0xF6AEB9A606561C54",
+      "language": "hlsl",
+      "source": "postfx/composite_f6aeb9a606561c54.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ],
+      "required_builtins": [
+        "SampleMask"
+      ],
+      "require_early_fragment_tests": true
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xEE75C9F6AA1AB16A",
+      "language": "hlsl",
+      "source": "motion_blur/gta_composite_mb.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xE51D9DD95A333D92",
+      "language": "hlsl",
+      "source": "motion_blur/gta_composite_mb_high_dof.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xD3B2B2125BC24911",
+      "language": "hlsl",
+      "source": "motion_blur/gta_composite_mb_dof_debug.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x94CC5AF0E2FF5B08",
+      "language": "hlsl",
+      "source": "motion_blur/gta_composite_mb_high_dof_debug.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x79044EA1461439CA",
+      "language": "hlsl",
+      "source": "film_grain/tlad_composite_noise.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xC5D3E7806E478A16",
+      "language": "hlsl",
+      "source": "film_grain/tlad_composite_mb_noise.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x67C1FB770BB55E69",
+      "language": "hlsl",
+      "source": "film_grain/tlad_composite_high_dof_noise.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xE4AF188ACBDA7362",
+      "language": "hlsl",
+      "source": "film_grain/tlad_composite_mb_high_dof_noise.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xE74BFC50127AFED3",
+      "language": "hlsl",
+      "source": "bloom/rage_postfx_scalable_bloom.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "BLOOM_HORIZONTAL"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x86CB9F8D0850ABE3",
+      "language": "hlsl",
+      "source": "bloom/rage_postfx_scalable_bloom.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "BLOOM_VERTICAL"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xC3256D6D7C2E426D",
+      "language": "hlsl",
+      "source": "water/water_ps1_smooth_shorelines.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "vertex",
+      "hash": "0xDF64C22EC010C136",
+      "language": "hlsl",
+      "source": "light_volume/deferred_lighting_vs7_smooth.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000000",
+      "defines": [
+        "GTA4_RECOMP",
+        "GTA4_LIGHT_VOLUME_SUPPORT_BITS=0x3F59999A"
+      ],
+      "activation": "pipeline_pair",
+      "pipeline_pair_id": 1,
+      "counterpart_hashes": [
+        "0x458818340E2283DE"
+      ],
+      "used_texture_mask": "0x00000000",
+      "support_radius_bits": "0x3F59999A",
+      "supported_sample_counts": [
+        1,
+        2,
+        4
+      ],
+      "expected_input_locations": [
+        0
+      ],
+      "expected_output_locations": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "expected_descriptor_bindings": [],
+      "expected_spec_ids": []
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x458818340E2283DE",
+      "language": "hlsl",
+      "source": "light_volume/deferred_lighting_ps20_smooth.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP",
+        "GTA4_LIGHT_VOLUME_SUPPORT_BITS=0x3F59999A"
+      ],
+      "activation": "pipeline_pair",
+      "pipeline_pair_id": 1,
+      "counterpart_hashes": [
+        "0xDF64C22EC010C136"
+      ],
+      "used_texture_mask": "0x00000001",
+      "support_radius_bits": "0x3F59999A",
+      "required_builtins": [
+        "SampleMask"
+      ],
+      "require_early_fragment_tests": true,
+      "supported_sample_counts": [
+        1,
+        2,
+        4
+      ],
+      "expected_input_locations": [
+        0,
+        1,
+        2
+      ],
+      "expected_output_locations": [
+        0
+      ],
+      "expected_descriptor_bindings": [
+        "0:0",
+        "4:0"
+      ],
+      "expected_spec_ids": [
+        0
+      ]
+    },
+    {
+      "stage": "vertex",
+      "hash": "0xEFAACEED3DBD802D",
+      "language": "hlsl",
+      "source": "fog/rage_postfx_fog_vs.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000000",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x1A6669BBAFDC43E7",
+      "language": "hlsl",
+      "source": "fog/rage_postfx_exponential_height_fog.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "vertex",
+      "hash": "0x156BAD4A9EE62726",
+      "language": "hlsl",
+      "source": "bink/vs_bink.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000000",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x9E76B68B60127349",
+      "language": "hlsl",
+      "source": "bink/ps_bink.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xA6C9E2B8B2A59D7A",
+      "language": "hlsl",
+      "source": "bink/ps_bink_no_alpha.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x535ACDAB8AE84D82",
+      "language": "glsl",
+      "source": "motion_blur/gta_composite_mb_e2.glsl",
+      "entry_point": "main",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [],
+      "used_texture_mask": "0x0000007F",
+      "supported_sample_counts": [
+        1
+      ],
+      "required_builtins": [
+        "SampleMask"
+      ],
+      "require_early_fragment_tests": true,
+      "expected_input_locations": [
+        0,
+        1
+      ],
+      "expected_output_locations": [
+        0
+      ],
+      "expected_descriptor_bindings": [
+        "0:0",
+        "4:0"
+      ],
+      "expected_spec_ids": [
+        0
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xCC0C2F3146CCC96E",
+      "language": "hlsl",
+      "source": "depth_of_field/composite_cc0c2f3146ccc96e.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x2EAEDEB9125948C2",
+      "language": "hlsl",
+      "source": "depth_of_field/composite_2eaedeb9125948c2.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x54FABC991DB485C8",
+      "language": "hlsl",
+      "source": "depth_of_field/composite_54fabc991db485c8.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x6533D90E6317B046",
+      "language": "hlsl",
+      "source": "depth_of_field/composite_6533d90e6317b046.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x9568A3A7BD3CDE18",
+      "language": "hlsl",
+      "source": "depth_of_field/composite_9568a3a7bd3cde18.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x8F2ECB251AE7FE9A",
+      "language": "hlsl",
+      "source": "depth_of_field/composite_8f2ecb251ae7fe9a.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x5D2A71133DA823F7",
+      "language": "hlsl",
+      "source": "depth_of_field/composite_5d2a71133da823f7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x7756A65D296806FF",
+      "language": "hlsl",
+      "source": "depth_of_field/composite_7756a65d296806ff.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xFE2FC0894C018D11",
+      "language": "hlsl",
+      "source": "depth_of_field/composite_fe2fc0894c018d11.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x9649029E1999BEA9",
+      "language": "hlsl",
+      "source": "depth_of_field/composite_9649029e1999bea9.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x069287E9B706AA14",
+      "language": "hlsl",
+      "source": "depth_of_field/composite_069287e9b706aa14.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x53906ADBE74441C6",
+      "language": "hlsl",
+      "source": "depth_of_field/composite_53906adbe74441c6.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xB44879A571332324",
+      "language": "hlsl",
+      "source": "depth_of_field/composite_b44879a571332324.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x439458C53B3FF810",
+      "language": "hlsl",
+      "source": "sky/clouds_ps8.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x000B4D6AC54D11CC",
+      "language": "hlsl",
+      "source": "sky/clouds_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xD409A2EAEA5F1247",
+      "language": "hlsl",
+      "source": "forward_fog/gta_cubemap_reflect_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x9664B87FB21FDC55",
+      "language": "hlsl",
+      "source": "forward_fog/gta_cubemap_reflect_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x801F35F9B7CB340D",
+      "language": "hlsl",
+      "source": "forward_fog/gta_cubemap_reflect_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xC5E695B6F240D5FB",
+      "language": "hlsl",
+      "source": "forward_fog/gta_cubemap_reflect_ps6.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x77E942C976BADC13",
+      "language": "hlsl",
+      "source": "forward_fog/gta_cubemap_reflect_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x6756673FBB1DD97D",
+      "language": "hlsl",
+      "source": "forward_fog/gta_cutout_fence_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x792D671E77A8A0B5",
+      "language": "hlsl",
+      "source": "forward_fog/gta_cutout_fence_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x09D7F76771AFA19B",
+      "language": "hlsl",
+      "source": "forward_fog/gta_cutout_fence_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xDAC1297F45297358",
+      "language": "hlsl",
+      "source": "forward_fog/gta_cutout_fence_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x3F5B42CD321A6B48",
+      "language": "hlsl",
+      "source": "forward_fog/gta_cutout_fence_ps8.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xC94588E3F071AFCC",
+      "language": "hlsl",
+      "source": "forward_fog/gta_decal_amb_only_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xA269AB3394E8C203",
+      "language": "hlsl",
+      "source": "forward_fog/gta_decal_amb_only_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x53E40A6D2FBB204F",
+      "language": "hlsl",
+      "source": "forward_fog/gta_decal_amb_only_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x98366BDD2B8FC765",
+      "language": "hlsl",
+      "source": "forward_fog/gta_decal_amb_only_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x2C10DEF4A8D3D9A7",
+      "language": "hlsl",
+      "source": "forward_fog/gta_decal_amb_only_ps8.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xDF494E2D23A7B15B",
+      "language": "hlsl",
+      "source": "forward_fog/gta_decal_dirt_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xB14BAE3CEB2DDE4A",
+      "language": "hlsl",
+      "source": "forward_fog/gta_decal_dirt_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x5959FAF79A36BFEC",
+      "language": "hlsl",
+      "source": "forward_fog/gta_decal_dirt_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x35D513959D9D3774",
+      "language": "hlsl",
+      "source": "forward_fog/gta_decal_dirt_ps6.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x27AD3084552E152F",
+      "language": "hlsl",
+      "source": "forward_fog/gta_decal_dirt_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x901E893F789FD473",
+      "language": "hlsl",
+      "source": "forward_fog/gta_decal_glue_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x09703D06DC78DB0A",
+      "language": "hlsl",
+      "source": "forward_fog/gta_decal_glue_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x4C21B08CF34FF894",
+      "language": "hlsl",
+      "source": "forward_fog/gta_decal_glue_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xB340A45A0949C127",
+      "language": "hlsl",
+      "source": "forward_fog/gta_decal_glue_ps6.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xD3D8330CCF1F7EA2",
+      "language": "hlsl",
+      "source": "forward_fog/gta_decal_glue_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x3DE29088F4B74D9F",
+      "language": "hlsl",
+      "source": "forward_fog/gta_decal_normal_only_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x1B9487E35730AC02",
+      "language": "hlsl",
+      "source": "forward_fog/gta_decal_normal_only_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x65F5CE31049EF0C5",
+      "language": "hlsl",
+      "source": "forward_fog/gta_decal_normal_only_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xCB1B837D58935B68",
+      "language": "hlsl",
+      "source": "forward_fog/gta_decal_normal_only_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x6AF4B57D982CC081",
+      "language": "hlsl",
+      "source": "forward_fog/gta_decal_normal_only_ps8.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xFF927CA59A7B3373",
+      "language": "hlsl",
+      "source": "forward_fog/gta_decal_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x6A9F498BF19B269D",
+      "language": "hlsl",
+      "source": "forward_fog/gta_decal_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x1EB4D29E37B8C62F",
+      "language": "hlsl",
+      "source": "forward_fog/gta_decal_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x03473DC524D3C9B5",
+      "language": "hlsl",
+      "source": "forward_fog/gta_decal_ps6.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xF1B3E77697F90B85",
+      "language": "hlsl",
+      "source": "forward_fog/gta_decal_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x894BA410F46F7BC8",
+      "language": "hlsl",
+      "source": "forward_fog/gta_default_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x1FE405C821EB03F2",
+      "language": "hlsl",
+      "source": "forward_fog/gta_default_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x7DA3D273F2DD9ACA",
+      "language": "hlsl",
+      "source": "forward_fog/gta_default_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x025A7E6D2F2ECFAF",
+      "language": "hlsl",
+      "source": "forward_fog/gta_default_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x992542AEACB2DD22",
+      "language": "hlsl",
+      "source": "forward_fog/gta_default_ps8.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x1DC5F808C6E0D0E8",
+      "language": "hlsl",
+      "source": "forward_fog/gta_diffuse_instance_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x57EAC513774DCE65",
+      "language": "hlsl",
+      "source": "forward_fog/gta_diffuse_instance_ps3.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xD2A50E2A3027237A",
+      "language": "hlsl",
+      "source": "forward_fog/gta_diffuse_instance_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xC2FEC3C3D7D1929A",
+      "language": "hlsl",
+      "source": "forward_fog/gta_emissive_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x3685FA19387DBD62",
+      "language": "hlsl",
+      "source": "forward_fog/gta_emissive_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xDB629F230E5D45D3",
+      "language": "hlsl",
+      "source": "forward_fog/gta_emissivenight_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x9CF81265650755FF",
+      "language": "hlsl",
+      "source": "forward_fog/gta_emissivenight_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x1308A50A6373EDB3",
+      "language": "hlsl",
+      "source": "forward_fog/gta_emissivestrong_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x3FDC377456182186",
+      "language": "hlsl",
+      "source": "forward_fog/gta_emissivestrong_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x6DB802735013D7B8",
+      "language": "hlsl",
+      "source": "forward_fog/gta_glass_emissive_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x16149DF2F32CE318",
+      "language": "hlsl",
+      "source": "forward_fog/gta_glass_emissive_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xA1B9658036DBDB0F",
+      "language": "hlsl",
+      "source": "forward_fog/gta_glass_emissivenight_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x83AB77D902C1E49C",
+      "language": "hlsl",
+      "source": "forward_fog/gta_glass_emissivenight_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x425EA3A5869FC73D",
+      "language": "hlsl",
+      "source": "forward_fog/gta_glass_normal_spec_reflect_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x1E6397830AE85317",
+      "language": "hlsl",
+      "source": "forward_fog/gta_glass_normal_spec_reflect_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x5358D0E02B3D388B",
+      "language": "hlsl",
+      "source": "forward_fog/gta_glass_normal_spec_reflect_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xC09461AC1190087F",
+      "language": "hlsl",
+      "source": "forward_fog/gta_glass_normal_spec_reflect_ps6.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x0D2FF60066A120ED",
+      "language": "hlsl",
+      "source": "forward_fog/gta_glass_normal_spec_reflect_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xB7A4469BA36BE43B",
+      "language": "hlsl",
+      "source": "forward_fog/gta_glass_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xC64FFAF1D19378EC",
+      "language": "hlsl",
+      "source": "forward_fog/gta_glass_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xE2DC630AB4EA2DDF",
+      "language": "hlsl",
+      "source": "forward_fog/gta_glass_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x55E1BFF0103AE996",
+      "language": "hlsl",
+      "source": "forward_fog/gta_glass_ps6.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x6AA67AF8795F519F",
+      "language": "hlsl",
+      "source": "forward_fog/gta_glass_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x36E7D88B2142A259",
+      "language": "hlsl",
+      "source": "forward_fog/gta_glass_reflect_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x207B75F1CF1A6CDD",
+      "language": "hlsl",
+      "source": "forward_fog/gta_glass_reflect_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x5004494CC7CDD926",
+      "language": "hlsl",
+      "source": "forward_fog/gta_glass_reflect_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x571ECCAE1E92B8E3",
+      "language": "hlsl",
+      "source": "forward_fog/gta_glass_reflect_ps6.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x376D0ECB2762DC23",
+      "language": "hlsl",
+      "source": "forward_fog/gta_glass_reflect_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xC5CBC739D2581D71",
+      "language": "hlsl",
+      "source": "forward_fog/gta_glass_spec_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x3BF041A15F84AFE4",
+      "language": "hlsl",
+      "source": "forward_fog/gta_glass_spec_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x719F492CE775DCC3",
+      "language": "hlsl",
+      "source": "forward_fog/gta_glass_spec_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x1B01AA525225F008",
+      "language": "hlsl",
+      "source": "forward_fog/gta_glass_spec_ps6.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x13F7CD56D7A7F640",
+      "language": "hlsl",
+      "source": "forward_fog/gta_glass_spec_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x6098E3511325CA65",
+      "language": "hlsl",
+      "source": "forward_fog/gta_hair_sorted_alpha_exp_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xCA42D2515C6694E1",
+      "language": "hlsl",
+      "source": "forward_fog/gta_hair_sorted_alpha_exp_ps1.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x59DC3B61CABCCF70",
+      "language": "hlsl",
+      "source": "forward_fog/gta_hair_sorted_alpha_exp_ps2.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x5AEDAEBCF7DDA1A0",
+      "language": "hlsl",
+      "source": "forward_fog/gta_hair_sorted_alpha_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x4C76CF8A9FD9D60E",
+      "language": "hlsl",
+      "source": "forward_fog/gta_hair_sorted_alpha_ps1.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x6FB93C4258D61D7A",
+      "language": "hlsl",
+      "source": "forward_fog/gta_hair_sorted_alpha_ps2.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xECA7E919FECAAD3C",
+      "language": "hlsl",
+      "source": "forward_fog/gta_im_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xEAEF4CB6BF28AF74",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_cubemap_reflect_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x0377C968C7AA5508",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_cubemap_reflect_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x0D0495F68A73F512",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_cubemap_reflect_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x4FB4D601FF0903E7",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_cubemap_reflect_ps6.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x0224568DFC3B71E8",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_cubemap_reflect_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x0C00CC08589026D4",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_decal_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xBB0B970FCDBBA46A",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_decal_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xD0501DAF454A571B",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_decal_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x5C8802CAAC54C5A8",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_decal_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x5979FE5E824494D2",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_decal_ps8.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xF413924F01982BC3",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xC96C4BB250B9D6E7",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x514E0C2346C7CE81",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x7F9F5A747383904F",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x35F7C9E4E81C3686",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_ps8.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x5A4791F86BE321B3",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_reflect_alpha_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xE61C9705B061E6EF",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_reflect_alpha_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xD5722FB1C1864D78",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_reflect_alpha_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xD100BC3F5521E986",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_reflect_alpha_ps6.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xC8DF7B3FCE620F3A",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_reflect_alpha_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x4BB7A311273A8CFA",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_reflect_decal_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x9F03F63A74E70B68",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_reflect_decal_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x34C58FBA07536B23",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_reflect_decal_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xA598CD7639B5A078",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_reflect_decal_ps6.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xE7DA3973B4130FEA",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_reflect_decal_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x11D764AB702E3AB4",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_reflect_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x329A857EE316F393",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_reflect_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xF6775A26CACD7BEB",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_reflect_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x834E3CBDB42BEB3F",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_reflect_ps6.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xEA32294381DC05C9",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_reflect_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x2AC487BAEAB54040",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_spec_cubemap_reflect_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x8DBE942D740B22E5",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_spec_cubemap_reflect_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x63DF612AE0AEAD89",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_spec_cubemap_reflect_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xA6583125F38CBF04",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_spec_cubemap_reflect_ps6.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xBC3F83E91109DB9B",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_spec_cubemap_reflect_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xB2D2BAEAD30A2EE6",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_spec_decal_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xED38F7D680CF739C",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_spec_decal_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xF68845AD66876308",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_spec_decal_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xED4176B696305DBA",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_spec_decal_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x478753F8B2A23104",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_spec_decal_ps8.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xDF19BE625EDE2A7F",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_spec_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xF95968E5E4C9FCD7",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_spec_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x2600A54363E4C2CB",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_spec_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x0F57F8B39C08F79C",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_spec_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x21274FAC031D6738",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_spec_ps8.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xB26B4A0273E90C70",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_spec_reflect_decal_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x74FE900E42C5BDA5",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_spec_reflect_decal_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xFDD6B47237319070",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_spec_reflect_decal_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xAC186E314903E55B",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_spec_reflect_decal_ps6.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xE912FA84DA4115BF",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_spec_reflect_decal_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xB0A7C4988B5A4E01",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_spec_reflect_emissive_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xC4A9B1FBA3CB0FAC",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_spec_reflect_emissive_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xF8FDB62C177167D4",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_spec_reflect_emissivenight_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x7F713CC01DF1A957",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_spec_reflect_emissivenight_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x1186D173FEAF1ED2",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_spec_reflect_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x3645949C7C88DDB8",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_spec_reflect_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x30CC704E768C8FEC",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_spec_reflect_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xE0122C4136A85A3A",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_spec_reflect_ps6.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xB66AF58079C66049",
+      "language": "hlsl",
+      "source": "forward_fog/gta_normal_spec_reflect_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xDFD52B59A5AE05D4",
+      "language": "hlsl",
+      "source": "forward_fog/gta_parallax_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x9EF5D507FF21284C",
+      "language": "hlsl",
+      "source": "forward_fog/gta_parallax_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xE448143310C06481",
+      "language": "hlsl",
+      "source": "forward_fog/gta_parallax_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x1F64BD78225BDB14",
+      "language": "hlsl",
+      "source": "forward_fog/gta_parallax_ps6.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x917CECE3437FEEB6",
+      "language": "hlsl",
+      "source": "forward_fog/gta_parallax_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xB9FACEEB81658A3F",
+      "language": "hlsl",
+      "source": "forward_fog/gta_parallax_specmap_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xF927871849B14014",
+      "language": "hlsl",
+      "source": "forward_fog/gta_parallax_specmap_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x060594208E14A987",
+      "language": "hlsl",
+      "source": "forward_fog/gta_parallax_specmap_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x7FD8BB72575904B7",
+      "language": "hlsl",
+      "source": "forward_fog/gta_parallax_specmap_ps6.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xFBC144B0A312CB40",
+      "language": "hlsl",
+      "source": "forward_fog/gta_parallax_specmap_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xA42F509973237E7A",
+      "language": "hlsl",
+      "source": "forward_fog/gta_parallax_steep_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x158ADBAEA945F2E5",
+      "language": "hlsl",
+      "source": "forward_fog/gta_parallax_steep_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xF7ADF8861B45F43D",
+      "language": "hlsl",
+      "source": "forward_fog/gta_parallax_steep_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xCDDEFB3A121662AF",
+      "language": "hlsl",
+      "source": "forward_fog/gta_parallax_steep_ps6.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x28675509077F6C26",
+      "language": "hlsl",
+      "source": "forward_fog/gta_parallax_steep_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x6F6E99A209B9D543",
+      "language": "hlsl",
+      "source": "forward_fog/gta_ped_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x4D446CE09E1F7E71",
+      "language": "hlsl",
+      "source": "forward_fog/gta_ped_ps1.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x2DE0EF44C7004B67",
+      "language": "hlsl",
+      "source": "forward_fog/gta_ped_ps2.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xBA93C9762B127D49",
+      "language": "hlsl",
+      "source": "forward_fog/gta_ped_reflect_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x8AE2A6EF217CC10B",
+      "language": "hlsl",
+      "source": "forward_fog/gta_ped_reflect_ps1.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x537AE37D33AF4677",
+      "language": "hlsl",
+      "source": "forward_fog/gta_ped_reflect_ps2.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xD652E2FCDB1C7DE4",
+      "language": "hlsl",
+      "source": "forward_fog/gta_ped_skin_blendshape_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xFC3D718C5DFF661F",
+      "language": "hlsl",
+      "source": "forward_fog/gta_ped_skin_blendshape_ps1.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xDDC01261E79566C4",
+      "language": "hlsl",
+      "source": "forward_fog/gta_ped_skin_blendshape_ps2.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x584F650502ACF9C8",
+      "language": "hlsl",
+      "source": "forward_fog/gta_ped_skin_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x9BC606C8B1DB0AB2",
+      "language": "hlsl",
+      "source": "forward_fog/gta_ped_skin_ps1.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x51CD1E9A882F54B1",
+      "language": "hlsl",
+      "source": "forward_fog/gta_ped_skin_ps2.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x4D4F9C2F5102DF94",
+      "language": "hlsl",
+      "source": "forward_fog/gta_projtex_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x9E8D0EA6BB08A076",
+      "language": "hlsl",
+      "source": "forward_fog/gta_projtex_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xDBC07959155931CE",
+      "language": "hlsl",
+      "source": "forward_fog/gta_projtex_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x49A14F98CF5D6F34",
+      "language": "hlsl",
+      "source": "forward_fog/gta_projtex_ps6.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xD15FB4B35951442B",
+      "language": "hlsl",
+      "source": "forward_fog/gta_projtex_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xC5013CF0DDFD2503",
+      "language": "hlsl",
+      "source": "forward_fog/gta_projtex_steep_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x03F3FA2DF3E46555",
+      "language": "hlsl",
+      "source": "forward_fog/gta_projtex_steep_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x135F19166821CBD3",
+      "language": "hlsl",
+      "source": "forward_fog/gta_projtex_steep_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x282ED6342ABB4FCF",
+      "language": "hlsl",
+      "source": "forward_fog/gta_projtex_steep_ps6.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x4A0F1EB01FBB7EAE",
+      "language": "hlsl",
+      "source": "forward_fog/gta_projtex_steep_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x7AB81D9B57CA7241",
+      "language": "hlsl",
+      "source": "forward_fog/gta_reflect_decal_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xDCB9F99D62C13E6A",
+      "language": "hlsl",
+      "source": "forward_fog/gta_reflect_decal_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x1A413EA433066A6D",
+      "language": "hlsl",
+      "source": "forward_fog/gta_reflect_decal_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x66CA52C99DB12FD8",
+      "language": "hlsl",
+      "source": "forward_fog/gta_reflect_decal_ps6.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x8894829CB6A540D6",
+      "language": "hlsl",
+      "source": "forward_fog/gta_reflect_decal_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xA88CB2CF6F7D8D69",
+      "language": "hlsl",
+      "source": "forward_fog/gta_reflect_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xBF4891DDB2172C8C",
+      "language": "hlsl",
+      "source": "forward_fog/gta_reflect_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x0E5FBEA9FA005FE6",
+      "language": "hlsl",
+      "source": "forward_fog/gta_reflect_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x223B7750A9C721CA",
+      "language": "hlsl",
+      "source": "forward_fog/gta_reflect_ps6.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xEAB40CA0E2028CCB",
+      "language": "hlsl",
+      "source": "forward_fog/gta_reflect_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xA3F8DE762B9B95F9",
+      "language": "hlsl",
+      "source": "forward_fog/gta_rmptfx_mesh_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xA581EE9EC59DC7A2",
+      "language": "hlsl",
+      "source": "forward_fog/gta_rmptfx_mesh_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xE022F03824EB4CEC",
+      "language": "hlsl",
+      "source": "forward_fog/gta_rmptfx_mesh_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x47FA2AF775A1D6C1",
+      "language": "hlsl",
+      "source": "forward_fog/gta_rmptfx_mesh_ps6.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xDE5587021D2A45BE",
+      "language": "hlsl",
+      "source": "forward_fog/gta_rmptfx_mesh_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x43EEA90803F23555",
+      "language": "hlsl",
+      "source": "forward_fog/gta_spec_decal_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xE73CF166EDB670CD",
+      "language": "hlsl",
+      "source": "forward_fog/gta_spec_decal_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x84898C30D146F3E5",
+      "language": "hlsl",
+      "source": "forward_fog/gta_spec_decal_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x0EE729812670F238",
+      "language": "hlsl",
+      "source": "forward_fog/gta_spec_decal_ps6.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xF69783E39F609D15",
+      "language": "hlsl",
+      "source": "forward_fog/gta_spec_decal_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x0B27C5E592140EFC",
+      "language": "hlsl",
+      "source": "forward_fog/gta_spec_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x4A8A97FE50B1ADD8",
+      "language": "hlsl",
+      "source": "forward_fog/gta_spec_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xF41CE313149EE537",
+      "language": "hlsl",
+      "source": "forward_fog/gta_spec_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x3B1A4F71A69C3188",
+      "language": "hlsl",
+      "source": "forward_fog/gta_spec_ps6.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x45B4B9EC1091A9DC",
+      "language": "hlsl",
+      "source": "forward_fog/gta_spec_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x5A6F9147CAED0484",
+      "language": "hlsl",
+      "source": "forward_fog/gta_spec_reflect_decal_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x7121D898122C8714",
+      "language": "hlsl",
+      "source": "forward_fog/gta_spec_reflect_decal_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xF711F401D492E994",
+      "language": "hlsl",
+      "source": "forward_fog/gta_spec_reflect_decal_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x8EE42CD3A2FB7A65",
+      "language": "hlsl",
+      "source": "forward_fog/gta_spec_reflect_decal_ps6.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x16886145C2A7DD89",
+      "language": "hlsl",
+      "source": "forward_fog/gta_spec_reflect_decal_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x5BCFEABDE7156DA9",
+      "language": "hlsl",
+      "source": "forward_fog/gta_spec_reflect_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xF2A11D0294AAD9BB",
+      "language": "hlsl",
+      "source": "forward_fog/gta_spec_reflect_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x463D1ACAD92A7690",
+      "language": "hlsl",
+      "source": "forward_fog/gta_spec_reflect_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x566B386DE2186AB6",
+      "language": "hlsl",
+      "source": "forward_fog/gta_spec_reflect_ps6.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x9F37DC8D3D4AAFD2",
+      "language": "hlsl",
+      "source": "forward_fog/gta_spec_reflect_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xCA52D4461A467ED4",
+      "language": "hlsl",
+      "source": "forward_fog/gta_terrain_va_2lyr_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x51B79069BC475431",
+      "language": "hlsl",
+      "source": "forward_fog/gta_terrain_va_2lyr_ps1.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xDB5AF24519BCCE28",
+      "language": "hlsl",
+      "source": "forward_fog/gta_terrain_va_3lyr_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xE7B17DCF4AD4E407",
+      "language": "hlsl",
+      "source": "forward_fog/gta_terrain_va_3lyr_ps1.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x1940513604531239",
+      "language": "hlsl",
+      "source": "forward_fog/gta_terrain_va_3lyr_ps2.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xDE338A1092161ACA",
+      "language": "hlsl",
+      "source": "forward_fog/gta_terrain_va_4lyr_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x88E4770E15AFC34B",
+      "language": "hlsl",
+      "source": "forward_fog/gta_terrain_va_4lyr_ps1.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x77E6F2926EAD5DFD",
+      "language": "hlsl",
+      "source": "forward_fog/gta_terrain_va_4lyr_ps2.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xA6294E92A0DA563C",
+      "language": "hlsl",
+      "source": "forward_fog/gta_terrain_va_4lyr_ps3.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xEC7DD211680FCB4C",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_badges_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x0EC777ECC619BF2B",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_badges_ps1.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x670224A45F593442",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_badges_ps2.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xF9D2F3DA6FDA5EEB",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_basic_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x573FCD6976CE9EEB",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_basic_ps1.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x8E67A222A0359DDA",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_basic_ps2.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xE9CB730C975BA378",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_chrome_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x88E8B6CEFB5B519A",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_chrome_ps1.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x1A5852BE2F0B12D1",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_chrome_ps2.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x719B0CB56FF0F609",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_disc_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xC596EE810FA3ECCD",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_disc_ps1.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x2648885F4E3730FA",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_disc_ps2.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x48B61EF7B7544100",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_generic_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xFFFE882EC0F4CB48",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_generic_ps1.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x1FC744A0BFE7182C",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_generic_ps2.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x08F5DC123D4FBA6D",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_interior2_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x8AA803ECF4D92980",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_interior2_ps1.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xEACA9CAC789B341D",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_interior2_ps2.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x8FF6AE8F39A8248E",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_interior_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x59609EC7D4293DCA",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_interior_ps1.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x343D446E85326DD2",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_interior_ps2.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xA543D7E54314229C",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_lightsemissive_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x43919E04862E1179",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_lightsemissive_ps1.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x9F2491CB27B31D5F",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_lightsemissive_ps2.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x5C9F6E96D5F8962B",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_mesh_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xC0000F210BF56347",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_mesh_ps1.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xD0FC92045864413E",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_mesh_ps2.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x76B8BC93D46429B0",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_paint1_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x2226414FA91AC513",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_paint1_ps1.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x497D82B9B27AC4A1",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_paint1_ps2.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x974DD027434B1F8C",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_paint2_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xD385C24DE72C6307",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_paint2_ps1.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x99436FA82F6546F8",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_paint2_ps2.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x606E594A43589C86",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_paint3_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xF134320B5D69A667",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_paint3_ps1.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x31DF2221BF8AEC10",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_paint3_ps2.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xBD97441CEE5A6CD1",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_rims1_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x36A3C463695B9FBB",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_rims1_ps1.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xC911882C891CDE0B",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_rims1_ps2.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xB00C4C726CD20B26",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_rims2_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xCDBB2A5D3319243E",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_rims2_ps1.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xAF714AD6363258BE",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_rims2_ps2.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xF93B7D64DF1F8DF5",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_rubber_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xF07B2AD34DACF63E",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_rubber_ps1.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x3DF8ACB29FF25E56",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_rubber_ps2.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xA3665DD3418D4DCB",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_shuts_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xA7D169214C800F76",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_shuts_ps1.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xA9BC3B548A0D4197",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_shuts_ps2.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xB473F87F8E6DB711",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_tire_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xE26742C6024D670C",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_tire_ps1.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xE5AC276649C53066",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_tire_ps2.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x0652D704200F8801",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_vehglass_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xA06D0A22714589B3",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_vehglass_ps1.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x96BB083E4D7232EA",
+      "language": "hlsl",
+      "source": "forward_fog/gta_vehicle_vehglass_ps2.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x03557DE4308877C3",
+      "language": "hlsl",
+      "source": "forward_fog/gta_wire_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x0C9FD5782519757F",
+      "language": "hlsl",
+      "source": "forward_fog/gta_wire_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0xC478920293CEEF28",
+      "language": "hlsl",
+      "source": "forward_fog/gta_wire_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x7B3CC6611C469EDC",
+      "language": "hlsl",
+      "source": "forward_fog/gta_wire_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x4C321499EFF5E36B",
+      "language": "hlsl",
+      "source": "forward_fog/gta_wire_ps8.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x6321CDA83969A68D",
+      "language": "hlsl",
+      "source": "forward_fog/rage_default_ps0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x30E87E055509DDBC",
+      "language": "hlsl",
+      "source": "forward_fog/rage_default_ps4.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x76D629B793F0C63D",
+      "language": "hlsl",
+      "source": "forward_fog/rage_default_ps5.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x48B0029F08A4C99F",
+      "language": "hlsl",
+      "source": "forward_fog/rage_default_ps6.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "pixel",
+      "hash": "0x735536007263BDE5",
+      "language": "hlsl",
+      "source": "forward_fog/rage_default_ps7.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000702",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    },
+    {
+      "stage": "vertex",
+      "hash": "0x0421316FC8CF1313",
+      "language": "hlsl",
+      "source": "sky/clouds_vs0.hlsl",
+      "entry_point": "shaderMain",
+      "specialization_constants_mask": "0x00000000",
+      "defines": [
+        "GTA4_RECOMP"
+      ]
+    }
+  ]
+}

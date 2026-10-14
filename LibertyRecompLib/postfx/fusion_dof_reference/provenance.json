@@ -1,0 +1,10 @@
+{
+  "repository": "https://github.com/ThirteenAG/GTAIV.EFLC.FusionShaders",
+  "commit": "a8514056851f60b9332d772f37d536be9bc61883",
+  "files": {
+    "dof_blur.asm": "fb1df701bbd1210bed51296157849517775018b8b62b7dfe35c8928690cbdcc1",
+    "dof_coc.asm": "387b3a39063d4f47f921d79d8da7b34617d0584989970cf3f911eff5f3b58a64",
+    "dof_tent.asm": "6ef8d9b273c6d16a756e4458e9313e2e4a49cc7ca6b6f971bbb06cf44749c4ee",
+    "stipple_filter.asm": "041b445bc736e09e2a52a22ff00dc4e86488aaad78aaf3d179f501fdb2c95d2c"
+  }
+}

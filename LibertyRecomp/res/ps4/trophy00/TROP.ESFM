@@ -1,0 +1,272 @@
+<!--Sce-Np-Trophy-Signature: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+<trophyconf version="1.1" platform="ps4" policy="large">
+ <npcommid>LBTY00001_00</npcommid>
+ <trophyset-version>01.00</trophyset-version>
+ <parental-level license-area="default">0</parental-level>
+ <title-name>Liberty Recompiled</title-name>
+ <title-detail>Grand Theft Auto IV recompiled for PS4</title-detail>
+ <trophy id="000" hidden="no" ttype="P" pid="-1">
+  <n>Liberty City Legend</n>
+  <detail>Earn all other trophies in Liberty Recompiled.</detail>
+ </trophy>
+ <trophy id="001" hidden="no" ttype="B" pid="000">
+  <n>Off The Boat</n>
+  <detail>Complete the first mission.</detail>
+ </trophy>
+ <trophy id="002" hidden="no" ttype="B" pid="000">
+  <n>One Hundred And Eighty</n>
+  <detail>In a darts game score 180 with 3 darts.</detail>
+ </trophy>
+ <trophy id="003" hidden="no" ttype="B" pid="000">
+  <n>Pool Shark</n>
+  <detail>Beat a friend at pool.</detail>
+ </trophy>
+ <trophy id="004" hidden="no" ttype="B" pid="000">
+  <n>King of QUB3D</n>
+  <detail>Beat the High Score in QUB3D.</detail>
+ </trophy>
+ <trophy id="005" hidden="no" ttype="B" pid="000">
+  <n>Finish Him</n>
+  <detail>Complete 10 melee counters in 4 minutes.</detail>
+ </trophy>
+ <trophy id="006" hidden="no" ttype="S" pid="000">
+  <n>Genetically Superior</n>
+  <detail>Come first in 20 singleplayer street races.</detail>
+ </trophy>
+ <trophy id="007" hidden="no" ttype="B" pid="000">
+  <n>Wheelie Rider</n>
+  <detail>Do a wheelie lasting at least 500 feet on a motorbike.</detail>
+ </trophy>
+ <trophy id="008" hidden="no" ttype="B" pid="000">
+  <n>Gobble Gobble</n>
+  <detail>Score 3 strikes in a row, a turkey, in 10-pin bowling.</detail>
+ </trophy>
+ <trophy id="009" hidden="no" ttype="B" pid="000">
+  <n>Driving Mr. Bellic</n>
+  <detail>Unlock the special ability of taxi.</detail>
+ </trophy>
+ <trophy id="010" hidden="no" ttype="B" pid="000">
+  <n>Rolled Over</n>
+  <detail>Do 5 car rolls in a row from one crash.</detail>
+ </trophy>
+ <trophy id="011" hidden="no" ttype="B" pid="000">
+  <n>Walk Free</n>
+  <detail>Lose a 4 star wanted rating by outrunning the cops.</detail>
+ </trophy>
+ <trophy id="012" hidden="no" ttype="B" pid="000">
+  <n>Courier Service</n>
+  <detail>Complete all 10 package delivery jobs.</detail>
+ </trophy>
+ <trophy id="013" hidden="no" ttype="B" pid="000">
+  <n>Retail Therapy</n>
+  <detail>Unlock the special ability of buying guns from a friend.</detail>
+ </trophy>
+ <trophy id="014" hidden="no" ttype="B" pid="000">
+  <n>Chain Reaction</n>
+  <detail>Blow up 10 vehicles in 10 seconds.</detail>
+ </trophy>
+ <trophy id="015" hidden="no" ttype="S" pid="000">
+  <n>One Man Army</n>
+  <detail>Survive 5 minutes on 6 star wanted level.</detail>
+ </trophy>
+ <trophy id="016" hidden="no" ttype="B" pid="000">
+  <n>Lowest Point</n>
+  <detail>Complete mission "Roman's Sorrow".</detail>
+ </trophy>
+ <trophy id="017" hidden="no" ttype="B" pid="000">
+  <n>Order Fulfilled</n>
+  <detail>Complete all 10 Exotic Export orders.</detail>
+ </trophy>
+ <trophy id="018" hidden="no" ttype="B" pid="000">
+  <n>Manhunt</n>
+  <detail>Complete the most wanted side missions from the police computer.</detail>
+ </trophy>
+ <trophy id="019" hidden="no" ttype="B" pid="000">
+  <n>Cleaned The Mean Streets</n>
+  <detail>Capture 20 criminals through the police computer.</detail>
+ </trophy>
+ <trophy id="020" hidden="no" ttype="B" pid="000">
+  <n>Fed The Fish</n>
+  <detail>Complete the mission "Uncle Vlad".</detail>
+ </trophy>
+ <trophy id="021" hidden="no" ttype="B" pid="000">
+  <n>It'll Cost Ya</n>
+  <detail>Complete a taxi ride without skipping from one island to another.</detail>
+ </trophy>
+ <trophy id="022" hidden="no" ttype="B" pid="000">
+  <n>Sightseer</n>
+  <detail>Fly on all helicopter tours of Liberty City.</detail>
+ </trophy>
+ <trophy id="023" hidden="no" ttype="B" pid="000">
+  <n>Warm Coffee</n>
+  <detail>Successfully date a girl to be invited into her house.</detail>
+ </trophy>
+ <trophy id="024" hidden="no" ttype="B" pid="000">
+  <n>That's How We Roll!</n>
+  <detail>Unlock the special ability of helicopter.</detail>
+ </trophy>
+ <trophy id="025" hidden="no" ttype="S" pid="000">
+  <n>Half Million</n>
+  <detail>Reach a balance of $500,000.</detail>
+ </trophy>
+ <trophy id="026" hidden="no" ttype="B" pid="000">
+  <n>Impossible Trinity</n>
+  <detail>Complete mission "Museum Piece".</detail>
+ </trophy>
+ <trophy id="027" hidden="no" ttype="B" pid="000">
+  <n>Full Exploration</n>
+  <detail>Unlock all the islands.</detail>
+ </trophy>
+ <trophy id="028" hidden="no" ttype="B" pid="000">
+  <n>You Got The Message</n>
+  <detail>Deliver all 30 cars ordered through text message.</detail>
+ </trophy>
+ <trophy id="029" hidden="no" ttype="S" pid="000">
+  <n>Dare Devil</n>
+  <detail>Complete 100% of the unique stunt jumps.</detail>
+ </trophy>
+ <trophy id="030" hidden="no" ttype="B" pid="000">
+  <n>Assassin's Greed</n>
+  <detail>Complete all 9 assassin missions.</detail>
+ </trophy>
+ <trophy id="031" hidden="no" ttype="S" pid="000">
+  <n>Endangered Species</n>
+  <detail>Collect every hidden package in the game.</detail>
+ </trophy>
+ <trophy id="032" hidden="no" ttype="B" pid="000">
+  <n>Under The Radar</n>
+  <detail>Fly underneath the main bridges in the game that cross water with a helicopter.</detail>
+ </trophy>
+ <trophy id="033" hidden="no" ttype="B" pid="000">
+  <n>Dial B For Bomb</n>
+  <detail>Unlock the special ability of phoning for a bomb to be placed.</detail>
+ </trophy>
+ <trophy id="034" hidden="no" ttype="B" pid="000">
+  <n>Gracefully Taken</n>
+  <detail>Complete mission "I'll Take Her".</detail>
+ </trophy>
+ <trophy id="035" hidden="no" ttype="B" pid="000">
+  <n>Liberty City (5)</n>
+  <detail>After meeting all possible friends, the ones left alive all like you above 90%.</detail>
+ </trophy>
+ <trophy id="036" hidden="no" ttype="B" pid="000">
+  <n>No More Strangers</n>
+  <detail>Meet all random characters.</detail>
+ </trophy>
+ <trophy id="037" hidden="no" ttype="B" pid="000">
+  <n>That Special Someone</n>
+  <detail>Complete mission "That Special Someone".</detail>
+ </trophy>
+ <trophy id="038" hidden="no" ttype="G" pid="000">
+  <n>You Won!</n>
+  <detail>Complete the final mission.</detail>
+ </trophy>
+ <trophy id="039" hidden="no" ttype="G" pid="000">
+  <n>Liberty City Minute</n>
+  <detail>Complete the story missions in less than 30 hours.</detail>
+ </trophy>
+ <trophy id="040" hidden="no" ttype="G" pid="000">
+  <n>Key To The City</n>
+  <detail>Achieve 100% in "Game progress" statistic.</detail>
+ </trophy>
+ <trophy id="041" hidden="no" ttype="B" pid="000">
+  <n>Teamplayer</n>
+  <detail>Kill 5 players who are not in your team, in any ranked multiplayer team game.</detail>
+ </trophy>
+ <trophy id="042" hidden="no" ttype="B" pid="000">
+  <n>Cut Your Teeth</n>
+  <detail>Earn a personal rank promotion in multiplayer.</detail>
+ </trophy>
+ <trophy id="043" hidden="no" ttype="S" pid="000">
+  <n>Join The Midnight Club</n>
+  <detail>Win a ranked multiplayer race without damaging your vehicle too much and with damage enabled.</detail>
+ </trophy>
+ <trophy id="044" hidden="no" ttype="S" pid="000">
+  <n>Fly The Co-op</n>
+  <detail>Beat the time in ranked versions of "Deal Breaker", "Hangman's NOOSE" and "Bomb da Base II".</detail>
+ </trophy>
+ <trophy id="045" hidden="no" ttype="B" pid="000">
+  <n>Taking It For The Team</n>
+  <detail>Be on the winning team in all ranked multiplayer team games.</detail>
+ </trophy>
+ <trophy id="046" hidden="no" ttype="B" pid="000">
+  <n>Top Of The Food Chain</n>
+  <detail>Kill 20 players with a pistol in a ranked multiplayer deathmatch.</detail>
+ </trophy>
+ <trophy id="047" hidden="no" ttype="S" pid="000">
+  <n>Top The Midnight Club</n>
+  <detail>Come first in 20 different ranked standard multiplayer races.</detail>
+ </trophy>
+ <trophy id="048" hidden="no" ttype="G" pid="000">
+  <n>Wanted</n>
+  <detail>Achieve the highest personal rank in multiplayer.</detail>
+ </trophy>
+ <trophy id="049" hidden="no" ttype="G" pid="000">
+  <n>Auf Wiedersehen Petrovic</n>
+  <detail>Win all ranked multiplayer variations, all races and "Cops 'n Crooks", as both sides.</detail>
+ </trophy>
+ <trophy id="050" hidden="yes" ttype="B" pid="000">
+  <n>Let Sleeping Rockstars Lie</n>
+  <detail>Kill a Rockstar developer in a ranked multiplayer match.</detail>
+ </trophy>
+ <trophy id="051" hidden="no" ttype="B" pid="000">
+  <n>TLAD: One Percenter</n>
+  <detail>Help Billy get his bike back. (The Lost and Damned)</detail>
+ </trophy>
+ <trophy id="052" hidden="no" ttype="B" pid="000">
+  <n>TLAD: The Lost Boy</n>
+  <detail>Become leader of The Lost. (The Lost and Damned)</detail>
+ </trophy>
+ <trophy id="053" hidden="no" ttype="G" pid="000">
+  <n>TLAD: Easy Rider</n>
+  <detail>Finish the story. (The Lost and Damned)</detail>
+ </trophy>
+ <trophy id="054" hidden="no" ttype="B" pid="000">
+  <n>TLAD: Get Good Wood</n>
+  <detail>In the bike races, whack off 69 bikers with a bat. (The Lost and Damned)</detail>
+ </trophy>
+ <trophy id="055" hidden="no" ttype="B" pid="000">
+  <n>TLAD: Full Chat</n>
+  <detail>Build Terry and Clay's toughness to 100%. (The Lost and Damned)</detail>
+ </trophy>
+ <trophy id="056" hidden="no" ttype="S" pid="000">
+  <n>TBoGT: Gone Down</n>
+  <detail>Complete all base jumps. (The Ballad of Gay Tony)</detail>
+ </trophy>
+ <trophy id="057" hidden="no" ttype="B" pid="000">
+  <n>TBoGT: Diamonds Forever</n>
+  <detail>Complete the Trinity. (The Ballad of Gay Tony)</detail>
+ </trophy>
+ <trophy id="058" hidden="no" ttype="B" pid="000">
+  <n>TBoGT: Four Play</n>
+  <detail>Hit a flag with a golf ball four times. (The Ballad of Gay Tony)</detail>
+ </trophy>
+ <trophy id="059" hidden="no" ttype="B" pid="000">
+  <n>TBoGT: Bear Fight</n>
+  <detail>Win the L.C. Cage Fighters championship. (The Ballad of Gay Tony)</detail>
+ </trophy>
+ <trophy id="060" hidden="no" ttype="B" pid="000">
+  <n>TBoGT: Catch the Bus</n>
+  <detail>Dance perfectly in both Tony's nightclubs. (The Ballad of Gay Tony)</detail>
+ </trophy>
+ <trophy id="061" hidden="no" ttype="B" pid="000">
+  <n>TBoGT: Snow Queen</n>
+  <detail>Complete 25 drug wars. (The Ballad of Gay Tony)</detail>
+ </trophy>
+ <trophy id="062" hidden="no" ttype="S" pid="000">
+  <n>TBoGT: Adrenaline Junkie</n>
+  <detail>Freefall for the longest possible time. (The Ballad of Gay Tony)</detail>
+ </trophy>
+ <trophy id="063" hidden="no" ttype="G" pid="000">
+  <n>TBoGT: Maestro</n>
+  <detail>Finish the Ballad. (The Ballad of Gay Tony)</detail>
+ </trophy>
+ <trophy id="064" hidden="no" ttype="S" pid="000">
+  <n>TBoGT: Past the Velvet Rope</n>
+  <detail>Score 80% or above in all missions. (The Ballad of Gay Tony)</detail>
+ </trophy>
+ <trophy id="065" hidden="no" ttype="G" pid="000">
+  <n>TBoGT: Gold Star</n>
+  <detail>Score 100% in all missions. (The Ballad of Gay Tony)</detail>
+ </trophy>
+</trophyconf>

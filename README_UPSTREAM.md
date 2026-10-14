@@ -1,0 +1,144 @@
+<p align="center">
+    <img src="docs/images/banner_repo.png" alt="Liberty Recompiled" width="800"/>
+</p>
+
+---
+
+> [!CAUTION]
+> This recompilation is in early development and is NOT meant for public use. This is a work-in-progress fork based on the MarathonRecomp framework.
+
+Liberty Recompiled is an unofficial PC port of the Xbox 360 version of Grand Theft Auto IV created through the process of static recompilation. The port aims to offer Windows, Linux, and macOS support.
+
+**This project does not include any game assets. You must provide the files from your own legally acquired copy of the game to install or build Liberty Recompiled.**
+
+The runtime is powered by a fork of the [ReXGlue SDK](https://github.com/rexglue/rexglue-sdk) ([our fork](https://github.com/sonicnext-dev/rexglue-sdk)), which handles PowerPC → C++ recompilation and Xenos shader translation. The development of static recompilation tooling in this space was directly inspired by [N64: Recompiled](https://github.com/N64Recomp/N64Recomp), which was used to create [Zelda 64: Recompiled](https://github.com/Zelda64Recomp/Zelda64Recomp).
+
+## Table of Contents
+
+- [Project Status](#project-status)
+- [Installation](#installation)
+- [Mod Support](#mod-support)
+- [Building](#building)
+- [Documentation](#documentation)
+
+## Project Status
+
+This project is in **early development**. Current progress:
+
+### Completed
+- [x] ReXGlue SDK integration for PowerPC → C++ translation and shader conversion
+- [x] Cross-platform build system (Windows, Linux, macOS)
+- [x] Installer wizard with ISO/folder/XContent support
+- [x] Shader extraction pipeline (RAGE FXC → Xbox 360 → platform-native)
+- [x] Platform-specific install directory support
+- [x] FusionFix-compatible mod overlay system
+
+### In Progress
+- [ ] RAGE engine structure reverse engineering
+- [ ] GPU/rendering pipeline implementation
+- [ ] Game-specific patches and fixes
+
+### Completed (Previously TODO)
+- [x] Audio system implementation (XMA decoder, SDL2 driver)
+- [x] Save data handling (full save system with GTA IV format support)
+- [x] Input remapping for GTA IV controls (SDL HID driver, GTA4 input patches)
+- [x] Network/multiplayer stubs (NetDll_XNetStartup, XLive stubs)
+- [x] Online multiplayer via GameNetworkingSockets (P2P with NAT traversal, no VPN required)
+- [x] File system and RPF archive handling (VFS)
+
+## Installation
+
+### Platform Install Directories
+
+| Platform | Install Directory |
+|----------|-------------------|
+| Windows | `%LOCALAPPDATA%\LibertyRecomp\` |
+| Linux | `~/.local/share/LibertyRecomp/` |
+| macOS | `~/Library/Application Support/LibertyRecomp/` |
+
+### Game Files Required
+
+You need a legal copy of GTA IV for Xbox 360. Supported formats:
+- Xbox 360 disc images (`.iso`)
+- Extracted game folders
+- XContent packages
+
+See [Dumping Guide](/docs/DUMPING-en.md) for detailed extraction instructions.
+
+### Launch Arguments
+
+| Argument | Description |
+|----------|-------------|
+| `--install` | Force reinstallation (useful if game files were modified) |
+| `--install-dlc` | Force DLC installation only |
+| `--install-check` | Verify file integrity |
+
+## Mod Support
+
+Liberty Recompiled includes **FusionFix-compatible mod loading**. Mods can override game files by placing them in overlay folders.
+
+### Quick Start
+
+1. Create an `update/` folder next to the LibertyRecomp executable
+2. Place mod files inside, mirroring the game's folder structure
+3. Launch the game - mod files automatically override base files
+
+```
+LibertyRecomp/
+├── game/           # Extracted game files
+└── update/         # Place mods here
+    └── common/
+        └── data/
+            └── handling.dat  # Overrides base handling.dat
+```
+
+### Supported Overlay Locations
+
+| Priority | Location | Description |
+|----------|----------|-------------|
+| 100 | `mods/update/` | Highest priority |
+| 50 | `update/` | Standard FusionFix location |
+| 40 | `GTAIV.EFLC.FusionFix/update/` | Alternative location |
+
+See [MOD_SUPPORT.md](/docs/MOD_SUPPORT.md) for detailed documentation.
+
+## Building
+
+Install the [platform prerequisites](docs/BUILDING.md#1-install-prerequisites), then:
+
+```bash
+git clone https://github.com/OZORDI/LibertyRecomp.git
+cd LibertyRecomp
+python3 tools/setup_repo.py
+```
+
+Setup fetches all pinned dependencies and applies the required source patches.
+On Windows use `py -3` instead of `python3`. After pulling an update:
+
+```bash
+git -c submodule.recurse=false pull --ff-only
+python3 tools/setup_repo.py
+```
+
+See [Building Liberty Recompiled](docs/BUILDING.md) for build presets, CMake 4 support,
+prerequisites, and recovery from incomplete/manual dependency downloads.
+
+## Documentation
+
+| Document | Description |
+|----------|-------------|
+| [Building Guide](/docs/BUILDING.md) | Build instructions for all platforms |
+| [Dumping Guide](/docs/DUMPING-en.md) | How to extract game files from Xbox 360 |
+| [Mod Support](/docs/MOD_SUPPORT.md) | FusionFix-compatible mod loading |
+| [Installation Architecture](/docs/INSTALLATION_ARCHITECTURE.md) | Platform paths and install flow |
+| [Online Multiplayer Guide](/docs/ONLINE_MULTIPLAYER.md) | Setup guide for online play |
+
+## Performance Comparison
+
+Performance comparison of GTA IV running on macOS using different methods:
+
+| Method | Screenshot |
+|--------|------------|
+| **Crossover (Wine)** | ![Crossover Performance](docs/images/perf_crossover.png) |
+| **Xenia (Xbox 360 Emulator)** | ![Xenia Performance](docs/images/perf_xenia.png) |
+| **RPCS3 (PS3 Emulator)** | ![RPCS3 Performance](docs/images/perf_rpcs3.png) |

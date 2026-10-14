@@ -1,0 +1,58 @@
+#version 450
+layout(local_size_x=8,local_size_y=8) in;
+layout(set=0,binding=0) uniform sampler2D source_depth;
+layout(set=0,binding=1,r32f) uniform writeonly image2D output_depth;
+layout(set=0,binding=2,rg16f) uniform image2D motion;
+layout(set=0,binding=3,r32f) uniform image2D previous_depth;
+layout(set=0,binding=4,std430) buffer Audit {
+  uint covered,invalid_motion,invalid_depth,invalid_previous_depth;
+} audit;
+shared uint group_counts[4];
+layout(push_constant) uniform Parameters {
+  mat4 reprojection;
+  vec2 jitter,half_pixel;
+  uvec2 extent;
+  uint reversed,history;
+} p;
+void main() {
+  uvec2 pixel=gl_GlobalInvocationID.xy;
+  if(p.history==2) {
+    if(gl_LocalInvocationIndex==0)
+      for(uint i=0;i<4;++i)group_counts[i]=0;
+    barrier();
+    if(all(lessThan(pixel,p.extent))) {
+      ivec2 at=ivec2(pixel);
+      vec2 velocity=imageLoad(motion,at).xy;
+      float z=texelFetch(source_depth,at,0).r;
+      float previous=imageLoad(previous_depth,at).r;
+      atomicAdd(group_counts[0],1);
+      if(any(isnan(velocity))||any(isinf(velocity)))atomicAdd(group_counts[1],1);
+      if(isnan(z)||isinf(z)||z<0||z>1)atomicAdd(group_counts[2],1);
+      if(isnan(previous)||isinf(previous)||previous<0||previous>1)atomicAdd(group_counts[3],1);
+    }
+    barrier();
+    if(gl_LocalInvocationIndex==0) {
+      atomicAdd(audit.covered,group_counts[0]);
+      atomicAdd(audit.invalid_motion,group_counts[1]);
+      atomicAdd(audit.invalid_depth,group_counts[2]);
+      atomicAdd(audit.invalid_previous_depth,group_counts[3]);
+    }
+    return;
+  }
+  if(any(greaterThanEqual(pixel,p.extent)))return;
+  ivec2 at=ivec2(pixel);
+  float z=texelFetch(source_depth,at,0).r;
+  imageStore(output_depth,at,vec4(z));
+  float far_z=p.reversed!=0?0.0:1.0;
+  // Only the infinite clear-depth environment has camera-only correspondence.
+  // Missing foreground motion is never repaired using a camera transform.
+  if(p.history==0||z!=far_z||imageLoad(previous_depth,at).r>=0)return;
+  vec2 uv=(vec2(pixel)+0.5-p.jitter)/vec2(p.extent);
+  vec2 current=(uv*2-1)*vec2(1,-1)-p.half_pixel;
+  vec4 previous=p.reprojection*vec4(current,far_z,1);
+  if(any(isnan(previous))||any(isinf(previous))||previous.w<=1e-6)return;
+  vec2 velocity=(previous.xy/previous.w-current)*vec2(p.extent)*vec2(0.5,-0.5);
+  if(any(isnan(velocity))||any(isinf(velocity))||any(greaterThan(abs(velocity),vec2(65504))))return;
+  imageStore(motion,at,vec4(velocity,0,0));
+  imageStore(previous_depth,at,vec4(far_z));
+}
