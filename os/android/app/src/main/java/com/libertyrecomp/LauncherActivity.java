@@ -165,7 +165,7 @@ public class LauncherActivity extends Activity {
         ImageView mark = new ImageView(this);
         mark.setImageResource(R.drawable.ic_github);
         row.addView(mark, new LinearLayout.LayoutParams(dp(16), dp(16)));
-        TextView name = text("vaduur", 13, R.color.picker_muted);
+        TextView name = text("emmahiguita · Mid-Range Edition", 13, R.color.picker_muted);
         LinearLayout.LayoutParams nameParams = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         nameParams.leftMargin = dp(6);
@@ -175,9 +175,9 @@ public class LauncherActivity extends Activity {
         row.setOnClickListener(v -> {
             try {
                 startActivity(new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("https://github.com/vaduur/LibertyRecompAndroid")));
+                        Uri.parse("https://github.com/emmahiguita/LibertyRecomp-MidRange-Edition/releases")));
             } catch (Exception e) {
-                toast("github.com/vaduur/LibertyRecompAndroid");
+                toast("github.com/emmahiguita/LibertyRecomp-MidRange-Edition");
             }
         });
         LinearLayout wrapper = new LinearLayout(this);
