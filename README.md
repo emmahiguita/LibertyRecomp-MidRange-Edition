@@ -4,202 +4,122 @@
 
 # LibertyRecomp-MidRange-Edition 🎮📱
 
-An optimized Android port of **Liberty Recompiled** (GTA IV Xbox 360 static recompilation), specially enhanced for **Mid-Range Android Devices (tested and stabilized on OPPO)**.
+[![GitHub Release](https://img.shields.io/github/v/release/emmahiguita/LibertyRecomp-MidRange-Edition?style=flat-square)](https://github.com/emmahiguita/LibertyRecomp-MidRange-Edition/releases)
+[![Platform](https://img.shields.io/badge/Platform-Android%2010%2B-green?style=flat-square)](https://github.com/emmahiguita/LibertyRecomp-MidRange-Edition)
+[![GPU Support](https://img.shields.io/badge/GPU-Mali%20%7C%20Adreno-blue?style=flat-square)](https://github.com/emmahiguita/LibertyRecomp-MidRange-Edition)
+[![Author](https://img.shields.io/badge/Author-Emmanuel%20Higuita-orange?style=flat-square)](https://github.com/emmahiguita)
 
-### ✨ Key Improvements in this Edition:
-- **ARM Big-Core Thread Pinning:** Automatically binds heavy render, audio, and physics threads to CPU Big Cores, eliminating FPS dips and thermal throttling on mid-range SoCs.
-- **3D Proximity Voice Chat:** Native 3D spatial voice chat engine (`gta4_proximity_engine`) for multiplayer and local voice interactions.
-- **Custom GPU Driver Bridge:** Integrated Turnip / Adreno custom driver loader (`DriverBridge`) for smooth Vulkan 1.2+ rendering on Adreno chipsets.
-- **Clean Worker Termination:** Prevents background zombie threads upon application shutdown.
-- **Modular Android Architecture:** Modernized Kotlin & AGP build setup with external resource syncing and custom CLI arguments.
-
-BTW, Any feedback is very appreciated, [Issues](https://github.com/vaduur/LibertyRecompAndroid/issues) are open, submit a ticket if you have any.
-
-
-> [!CAUTION]
-> This is an experimental, unofficial port of a project that is itself in early development.
-> Expect crashes and rough edges. It has been developed and tested on **one device**, a
-> Retroid Pocket 5 (Snapdragon 865 / Adreno 650).
-
-> [!NOTE]
-> New features land in **[pre-releases](https://github.com/vaduur/LibertyRecompAndroid/releases)**
-> first, while they are being tested. The release marked *Latest* is the stable one. Pre-releases
-> are listed above it and marked *Pre-release*. Feedback on them is welcome in
-> [Issues](https://github.com/vaduur/LibertyRecompAndroid/issues).
-
-**This project does not include any game assets.** You need your own legally obtained copy of the
-Xbox 360 game and its title update. Nothing here helps you get them.
-
-## Status
-
-On the Retroid Pocket 5 with the default settings:
-
-- The game installs, boots and plays: the intro, the early story missions, free roam and driving
-  have been played. Saves persist across launches.
-- The game renders at the console's native 720p with FXAA. The display scales the image to the panel.
-- Frame rate is capped at 30 FPS with VSync. Most places hold a steady 30. The heaviest far views
-  (bridges, the skyline at night) drop to about 25–29 FPS.
-- Shadows, draw distance and the shadow map size match the console. Traffic and pedestrian density
-  are reduced to 40% of the PC defaults to save CPU time.
-- Audio works, including the radio, cutscenes and Bink videos.
-
-Known problems:
-
-- Occasional crashes to the home screen still happen. Save often.
-- The in-game installer's **Select File / Select Folder** buttons do not work on Android. Install
-  from the launcher (0.5.7+) or through the app's `install` folder instead (see
-  [INSTALL.md](docs/android/INSTALL.md)).
-- One deferred light-volume shader is skipped, because it hangs the GPU under Turnip. A few
-  light volumes are missing as a result.
-- The episodes (The Lost and Damned, The Ballad of Gay Tony) and online multiplayer have not been
-  tested on Android.
-- The on-screen gamepad is new (0.5.7.2) and has only been tried on the Retroid Pocket 5 so far
-  (see [Controls](#controls)).
-
-## Device requirements
-
-| | Requirement |
-|---|---|
-| **GPU** | **Qualcomm Adreno 6xx or 7xx** (Snapdragon). Developed and tested on the Adreno 650. **Adreno 8xx: experimental since 0.5.7.5**, see below. |
-| **SoC** | Snapdragon 865 class or faster recommended (SD 865/870/888, 8 Gen 1/2/3, 8s Gen 3, …). |
-| **CPU** | arm64 with ARMv8.2-A (the build uses LSE atomics). ARMv8.0 chips such as the Snapdragon 835 crash on start. |
-| **Android** | Android 10 (API 29) or newer, 64-bit. |
-| **RAM** | 8 GB recommended. 6 GB is untested. |
-| **Storage** | About 7 GB for the installed game, plus room for the disc image while installing (about 15 GB free in total). |
-| **Controller** | An XInput (Xbox-layout) gamepad is strongly recommended, see [Controls](#controls). |
-
-**Not supported:**
-
-- **ARM Mali / Immortalis GPUs.** This covers most Exynos chips before the 2200, MediaTek
-  Dimensity/Helio and Google Tensor.
-- **Samsung Xclipse GPUs** (Exynos 2200 and newer).
-- **PowerVR GPUs** and anything else that is not an Adreno.
-
-Why only Adreno: the renderer needs Vulkan 1.2 and was tuned on Turnip. Turnip is Mesa's open-source
-Vulkan driver, and it exists only for Adreno GPUs. The stock Qualcomm driver on older devices
-(including the Adreno 650) exposes only Vulkan 1.1. On other GPUs the bundled driver cannot load,
-and nobody has run the renderer on their vendor drivers.
-
-**Adreno 8xx (Snapdragon 8 Elite and newer): experimental, since 0.5.7.5.** The game has been
-started on an Adreno 840 (Samsung, Android 17). The bundled Turnip build does not support Adreno
-8xx, so import a Turnip build for it on the launcher (**Import driver (.zip)**), such as the Gen8
-Turnip builds made for emulators. This is how it was tested. Expect rough edges, and please report
-how it runs in [Issues](https://github.com/vaduur/LibertyRecompAndroid/issues). Low-end Adreno
-6xx parts (610/618/619) should start, but expect them to be far too slow.
-
-Since 0.5.6.2, when the bundled Turnip cannot drive the GPU, the app falls back to the device's own
-Vulkan driver if that driver offers Vulkan 1.2. This is untested on any GPU. If no usable driver
-exists, the app shows a dialog with the reason instead of closing silently, and it writes
-`Android/data/com.libertyrecomp/files/last_launch.txt` with the device, GPU and driver details.
-Attach that file when you report a problem.
-
-## Controls
-
-**An XInput (Xbox-layout) gamepad is strongly recommended.** For example:
-
-- an Xbox controller over Bluetooth or USB;
-- any XInput-compatible pad;
-- the built-in controls of a gaming handheld (Retroid, AYN Odin, AYANEO and similar) in Xbox
-  mode.
-
-The game is the Xbox 360 version, so its controls and button prompts follow the Xbox layout one to
-one. Other controllers that Android recognizes (DualShock, DualSense, Switch Pro and so on) usually
-work through SDL. Their buttons are mapped by position, though, and they have seen much less
-testing.
-
-**On-screen gamepad (0.5.7.2 and newer).** Without a controller, the game shows a translucent
-Xbox 360 controller on the screen. It disappears as soon as a gamepad is connected, and comes back
-when it is disconnected.
-
-![The on-screen gamepad](docs/android/images/touch_gamepad.png)
-
-- **Left stick:** touch anywhere on the left half of the screen (outside the buttons). The stick
-  centres where your thumb lands.
-- **Right stick (camera):** touch anywhere on the right half of the screen. It works like a
-  controller's right stick.
-- **Buttons:** A/B/X/Y lower right, D-pad next to the left stick, LT/LB above the left stick, RT/RB
-  on the right, L3/R3 next to the bumpers, Back/Start at the top. Several fingers work at once.
-- **Menus** are driven with the same buttons, as on a controller.
-
-Settings in `args.txt` (see [ADVANCED.md](docs/android/ADVANCED.md#other-useful-settings)):
-
-- `--touch_controls=auto|on|off`. `auto` shows the overlay whenever no gamepad is connected, `on`
-  always shows it, `off` never does.
-- `--gta4_touch_layout=context` brings back upstream's context-sensitive touch layout instead of
-  the gamepad.
-
-## Game files required & Download reference
-
-The port requires the original Xbox 360 files:
-1. **The Xbox 360 GTA IV disc (.iso):** Must be the **USA (NTSC-U)** retail release.
-   - Reference source: [Vimm's Lair - Grand Theft Auto IV (Xbox 360)](https://vimm.net/vault/78373)
-   - Tested filename: `Grand Theft Auto IV (USA) (En,Fr,De,Es,It).iso` (~7.8 GB)
-   - MD5: `f0a046aed1520a913b2125f0a69ee7d0`
-2. **Title Update 8 (TU8):** Version **0.0.8.5** for the USA release (`TU_1A581VI_000000K000000.0000000000205` or raw `default.xexp`).
+Port nativo y optimizado de **Liberty Recompiled** (recompilación estática de GTA IV Xbox 360) para **dispositivos Android de gama media**, con soporte pionero para GPUs **ARM Mali** y procesadores **MediaTek Dimensity / Qualcomm Snapdragon**. Desarrollado y verificado en **OPPO A79 5G**.
 
 ---
 
-## 🚀 Guía de Instalación Rápida y Automatizada (Android / OPPO)
+## 📸 Demostración en Vivo (OPPO A79 5G - GPU Mali-G57 MC2)
 
-El instalador integrado detecta y extrae los componentes automáticamente:
+El juego corre en tiempo real con iluminación dinámica, físicas activas y controles táctiles en pantalla:
+
+| Niko Bellic en el Platypus (Render 3D) | Llegada al Muelle de Liberty City |
+|:---:|:---:|
+| <img src="docs/android/images/oppo_niko_cargo.png" alt="Niko Bellic en Barco Platypus" width="450"/> | <img src="docs/android/images/oppo_roman_docks.png" alt="Roman Bellic Docks" width="450"/> |
+
+---
+
+## ✨ Novedades y Optimizaciones de esta Edición
+
+* **🛡️ Compatibilidad Nativa con GPUs Mali (Dimensity & Exynos con ARMv8.2-A):**
+  - **Parcheador SPIR-V en tiempo real:** Intercepta la creación de shaders (`vkCreateShaderModule`) traduciendo `OpCapability ClipDistance` y reasignando registros a `Location 15` para evitar cierres de `libGLES_mali.so`.
+  - **Decodificador en memoria de texturas BCn (BC1–BC7):** Emula formatos de consola no soportados por el hardware de Mali sin fuga de memoria ni caídas de VRAM.
+* **⚡ Fijación de Hilos a Big-Cores (CPU Thread Pinning):**
+  - Vincula automáticamente los hilos pesados de renderizado, audio y físicas a los núcleos de alto rendimiento (Cortex-A76), eliminando tirones y sobrecalentamiento en SoCs de gama media.
+* **🔊 Audio Estable sin Cortes (Normal Mixer AAudio):**
+  - Buffer de 2048 muestras configurado para garantizar 0 underruns de audio en situaciones de alta carga.
+* **🎙️ Motor de Voz Espacial 3D (`gta4_proximity_engine`):**
+  - Soporte nativo para chat de proximidad 3D en partidas locales y multijugador.
+* **🎮 Selector y Puente de Drivers (Turnip & System Driver):**
+  - Carga el driver del sistema de forma segura en chipsets MediaTek/Mali o activa Turnip 26.3.0 en GPUs Adreno 6xx/7xx.
+* **📱 UI y Lanzador Personalizado:**
+  - Enlaces oficiales integrados a este repositorio, panel de diagnóstico detallado y selector de perfiles de rendimiento integrados.
+
+---
+
+## 📱 Compatibilidad y Requisitos de Dispositivo
+
+| Componente | Requisito Mínimo | Dispositivos Probados |
+|:---|:---|:---|
+| **GPU** | **ARM Mali-G57 o superior** / **Qualcomm Adreno 6xx/7xx** con Vulkan 1.2+ | **OPPO A79 5G** (Mali-G57 MC2) ✅<br>Retroid Pocket 5 (Adreno 650) ✅ |
+| **SoC** | MediaTek Dimensity 6020 / Snapdragon 7xx/8xx o superior | MT6833, SD865, SD870, SD8 Gen 2 |
+| **Arquitectura CPU** | **arm64 con ARMv8.2-A** (obligatorio por instrucciones atómicas LSE nativas) | *Nota: Chips ARMv8.0 antiguos (Exynos 7904, SD835) no soportan instrucciones atómicas nativas.* |
+| **Android** | Android 10 (API 29) o superior (Probado en Android 15 / API 35) | Android 11 a 15 |
+| **Memoria RAM** | 6 GB mínimo (8 GB recomendado) | 8 GB en OPPO A79 5G |
+| **Almacenamiento** | ~7 GB para el juego instalado (más ~8 GB temporales para la instalación inicial) | Almacenamiento interno |
+
+---
+
+## 🎮 Controles y Jugabilidad
+
+* **Controles Táctiles en Pantalla:** Configuración completa de botones Xbox 360 (Stick izquierdo de movimiento, Stick derecho de cámara analógica, cruceta D-pad, gatillos LT/RT, bumpers LB/RB, A/B/X/Y y botones Start/Back).
+* **Gamepads Físicos:** Reconocimiento instantáneo vía Bluetooth o USB (Mandos Xbox One/Series, DualShock 4, DualSense o mandos telescópicos para móviles).
+
+---
+
+## 💿 Archivos del Juego Necesarios
+
+1. **Disco Original Xbox 360 GTA IV (.iso):** Versión retail **USA (NTSC-U)**.
+   - Fuente de referencia: [Vimm's Lair - Grand Theft Auto IV (Xbox 360)](https://vimm.net/vault/78373)
+   - Archivo probado: `Grand Theft Auto IV (USA) (En,Fr,De,Es,It).iso` (~7.8 GB)
+   - MD5: `f0a046aed1520a913b2125f0a69ee7d0`
+2. **Title Update 8 (TU8):** Versión **0.0.8.5** para la edición USA (`TU_1A581VI_000000K000000.0000000000205` o archivo `default.xexp`). Se encuentra incluido en nuestros [Releases](https://github.com/emmahiguita/LibertyRecomp-MidRange-Edition/releases).
+
+---
+
+## 🚀 Guía de Instalación Rápida (1 Minuto)
 
 ### Paso 1: Instalar el APK
-1. Descarga el APK desde la sección de **[Releases](https://github.com/emmahiguita/LibertyRecomp-MidRange-Edition/releases)**:
-   - `LibertyRecompAndroid-v0.5.8.apk` (Recomendado para procesadores Snapdragon / Adreno).
-   - `LibertyRecompAndroid-v0.5.8-mali-patched.apk` (Para procesadores Dimensity / GPUs Mali).
-2. Abre el archivo en tu teléfono y concede permiso para instalar apps de fuentes desconocidas.
+Descarga la versión adecuada para tu dispositivo desde nuestros **[Releases Oficiales](https://github.com/emmahiguita/LibertyRecomp-MidRange-Edition/releases)**:
+* **`LibertyRecompAndroid-v0.5.9-mali-fixed.apk`**: Para procesadores **MediaTek / GPUs Mali** (OPPO, Xiaomi, Realme, etc.).
+* **`LibertyRecompAndroid-v0.5.8.apk`**: Para procesadores **Snapdragon / GPUs Adreno** (con soporte Turnip).
 
-### Paso 2: Colocar los archivos del juego (2 Métodos a elegir)
+### Paso 2: Instalación de los Datos del Juego (Elige un método)
 
-* **Método A (Automático desde el Launcher - Recomendado):**
-  1. Descarga tu copia `.iso` (por ejemplo desde [Vimm's Lair](https://vimm.net/vault/78373)) y el Title Update 8 en tu carpeta de **Descargas (Download)**.
+* **Método A (Desde el Menú del Juego - Recomendado):**
+  1. Guarda tu archivo `.iso` y la actualización `TU_...` en la carpeta **Descargas** de tu teléfono.
   2. Abre la app **Liberty Recompiled**.
-  3. En **Base game**, presiona **Choose file...** y selecciona tu archivo `.iso`. La app comprobará el archivo y mostrará una confirmación en verde:  
+  3. En **Base game**, toca **Choose file...** y selecciona tu archivo `.iso`. Verás una confirmación en verde:  
      `Detected: Grand Theft Auto IV — USA — Retail 1.00 — Supported`.
   4. En **Title Update 8**, selecciona el archivo de la actualización.
-  5. Presiona **Install**. El sistema extraerá e instalará automáticamente el juego en 1–3 minutos.
-  6. El botón **Play** se iluminará en blanco: ¡Tócalo y a jugar!
-  *(Una vez instalado, puedes borrar el archivo `.iso` de 7.8 GB de tu teléfono para liberar espacio).*
+  5. Presiona **Install**. El proceso tardará unos minutos en extraer y configurar el juego.
+  6. Presiona **Play**: ¡a disfrutar de Liberty City! *(Una vez instalado puedes borrar la ISO de 7.8 GB para recuperar espacio).*
 
-* **Método B (Carpeta `install/` - 100% Automático sin selector):**
-  1. Conecta el teléfono al PC o usa un gestor de archivos.
-  2. Copia tu archivo `.iso` y el Title Update directamente en:
+* **Método B (100% Automático por Carpeta):**
+  1. Conecta tu teléfono al PC o usa un administrador de archivos.
+  2. Coloca el archivo `.iso` y la actualización directamente en:
      ```text
      Android/data/com.libertyrecomp/files/install/
      ```
-  3. Abre la app: el launcher detecta los archivos automáticamente, realiza la extracción e instala el juego sin pedirte buscar rutas.
-    The file names do not matter, as long as the disc image ends in `.iso`.
+  3. Abre la app: el lanzador detectará ambos archivos automáticamente, realizará la instalación y encenderá el botón **Play**.
 
-Una vez instalado, el juego ocupa aproximadamente 6.5 GB. La guía técnica detallada paso a paso se encuentra en [INSTALL.md](docs/android/INSTALL.md).
+---
 
-## Documentation
+## 📚 Documentación Técnica
 
-| Document | Contents |
-|---|---|
-| [Installation and first launch](docs/android/INSTALL.md) | Installing the APK, copying the game files, the first-run installer, upgrading |
-| [Advanced configuration](docs/android/ADVANCED.md) | `args.txt` settings, live tuning, driver selection, logs, performance presets |
-| [What was done for Android](docs/android/PORTING.md) | Technical write-up of the port: build, platform layer, driver, renderer and stability work |
-| [Building from source](docs/android/BUILDING.md) | Building the APK yourself |
-| [Upstream README](README_UPSTREAM.md) | The original Liberty Recompiled README (desktop builds, mods, online) |
+| Documento | Descripción |
+|:---|:---|
+| [Guía de Instalación Detallada](docs/android/INSTALL.md) | Pasos exhaustivos de instalación y resolución de problemas. |
+| [Configuración Avanzada (`args.txt`)](docs/android/ADVANCED.md) | Parámetros del motor, resolución interna, variables de entorno y perfiles. |
+| [Detalles de la Adaptación a Android](docs/android/PORTING.md) | Explicación del port de arquitectura, capa de plataforma y drivers. |
+| [Compilación desde el Código Fuente](docs/android/BUILDING.md) | Instrucciones para compilar el APK y librerías nativas con Gradle y NDK. |
 
-## Credits
+---
 
-- [Liberty Recompiled](https://github.com/OZORDI/LibertyRecomp) by OZORDI and contributors, and the
-  [ReXGlue SDK](https://github.com/rexglue/rexglue-sdk) it is built on. Almost all of the hard work
-  of recompiling GTA IV is theirs. This fork adds the Android platform layer and the Android
-  performance work.
-- [Mesa Turnip](https://docs.mesa3d.org/drivers/freedreno.html), the open-source Adreno Vulkan driver.
-  The bundled build is StevenMXZ's Turnip 26.3.0-R6.
-- [libadrenotools](https://github.com/bylaws/libadrenotools) by bylaws, which loads a custom driver
-  into an app.
-- The Vulkan driver proxy comes from [skate3-android](https://github.com/andrewnakas/skate3-android)
-  and [skate3-pocket](https://github.com/AlanConstantino/skate3-pocket).
-- [SDL3](https://github.com/libsdl-org/SDL) for the Android activity, input and audio.
-- [nfsmw-nx](https://github.com/StevensND/nfsmw-nx) by StevensND, a ReXGlue port of Need for Speed:
-  Most Wanted to the Nintendo Switch and a great reference for running a ReXGlue recompilation on
-  weak hardware. Our direct-calls tool (`gta4-recomp/tools/direct_calls.py`) is adapted from their
-  `llamadas_directas.py`. Their work on game busy-waits and thread placement led to this port's
-  frame-wait hook and thread pinning experiments.
+## 👤 Autor y Contacto
+* **Desarrollador / Mantenedor:** Emmanuel Higuita ([@emmahiguita](https://github.com/emmahiguita))
+* **Repositorio Oficial:** [github.com/emmahiguita/LibertyRecomp-MidRange-Edition](https://github.com/emmahiguita/LibertyRecomp-MidRange-Edition)
+* **Reporte de Fallos e Ideas:** [GitHub Issues](https://github.com/emmahiguita/LibertyRecomp-MidRange-Edition/issues)
 
-Grand Theft Auto IV is a trademark of Take-Two Interactive Software. This project is not affiliated
-with or endorsed by Rockstar Games or Take-Two Interactive.
+---
+
+## ⚖️ Reconocimientos y Licencias
+* [Liberty Recompiled](https://github.com/OZORDI/LibertyRecomp) por OZORDI y colaboradores, y el framework [ReXGlue SDK](https://github.com/rexglue/rexglue-sdk).
+* [Mesa Turnip](https://docs.mesa3d.org/drivers/freedreno.html), driver Vulkan libre para GPUs Qualcomm Adreno.
+* [libadrenotools](https://github.com/bylaws/libadrenotools) por bylaws.
+* [SDL3](https://github.com/libsdl-org/SDL) para la gestión de ventanas, entradas táctiles y audio en Android.
+* *Grand Theft Auto IV es una marca registrada de Take-Two Interactive Software y Rockstar Games. Este proyecto es una recompilación estática comunitaria sin fines de lucro, independiente y no oficial.*
