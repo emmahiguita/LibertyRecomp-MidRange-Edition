@@ -1,43 +1,67 @@
 # ====================================================================
-# LibertyRecomp - Perfil Optimizado para Mali / Dispositivos Gama Media
-# Probado y verificado en vivo en OPPO A79 5G (MediaTek Dimensity 6020 / Mali-G57 MC2)
+# LibertyRecomp - Perfil Máxima Velocidad (Mali-G57 / Dimensity)
+# Cero bloqueos de sincronización, sin sleep artificial, GPU aliviada
 # ====================================================================
+
+# --- Modo de Presentación y Tasa de Cuadros (Desbloqueado / Inmediato) ---
+--gta4_present_mode=immediate
+--gta4_frame_limit=60
+--gta4_native_max_queued_frames=2
 
 # --- Resolución y Escalador AMD FSR 1.0 ---
 --gta4_output_height_cap=720
 --gta4_native_upscaler=fsr1
 --gta4_fsr1_quality=performance
 --gta4_native_anti_aliasing=off
---gta4_frame_limit=30
---gta4_present_mode=vsync
 
-# --- CPU y Planificación de Hilos (Afinidad a núcleos Cortex-A76) ---
---android_pin_hot_threads=true
---gta4_native_max_queued_frames=3
+# --- CPU sin Cuellos de Botella (Scheduler de Android Libre) ---
+--gta4_thread_pinning=0
+--android_pin_hot_threads=false
+--gta4_frame_wait_sleep=false
+--gta4_extra_frames_in_flight=0
 
-# --- Distancia de Dibujado Dinámica y Guardia de FPS ---
---gta4_draw_distance_scale=0.75
---gta4_dynamic_draw_distance=true
---gta4_dynamic_draw_distance_min=0.55
---gta4_fps_guard=3
+# --- Sombras Ultra Ligeras (Ahorro Masivo de GPU Mali) ---
+--gta4_shadow_map_base_size=128
+--gta4_shadow_distance_scale=1.0
+--gta4_native_shadow_min_indices=500
 
-# --- Población y Tráfico del Mundo ---
---gta4_traffic_density_scale=0.25
---gta4_parked_car_density_scale=0.25
---gta4_ped_density_scale=0.25
---gta4_scenario_ped_density_scale=0.25
-
-# --- Reflejos, Sombras y Geometría en GPU ---
+# --- Reflejos y Pases de Agua ---
 --gta4_motion_blur=false
 --gta4_reflection_aa=off
---gta4_reflection_capture_distance=near
 --gta4_reflection_resolution=original
---gta4_native_water_reflection_min_indices=450
---gta4_native_shadow_min_indices=400
---gta4_native_vertex_cache_order=true
+--gta4_water_reflection_resolution=original
+--gta4_mirror_reflection_resolution=original
+--gta4_environment_reflection_resolution=original
+--gta4_reflection_capture_distance=near
+--gta4_native_water_reflection_min_indices=500
+--gta4_fps_guard=3
 
-# --- Audio y Estabilidad ---
+# --- Renderer Vulkan y Shaders ---
+--gta4_native_fs_relaxed_precision=true
+--gta4_native_lazy_resolves=true
+--gta4_native_present_from_surface=true
+--gta4_native_skip_invisible_draws=true
+--gta4_native_skip_repeated_clears=true
+--gta4_native_vertex_cache_order=true
+--gta4_native_early_fragment_tests=true
+
+# --- Desactivar Profiling ---
+--gta4_profile_native_detailed_gpu=false
+--gta4_profile_native_detailed_cpu=false
+--gta4_gpu_counters=false
+--gta4_pipeline_stats=false
+
+# --- Distancia de Dibujado y Tráfico Liviano ---
+--gta4_draw_distance_scale=0.50
+--gta4_dynamic_draw_distance=true
+--gta4_dynamic_draw_distance_min=0.40
+--gta4_traffic_density_scale=0.15
+--gta4_parked_car_density_scale=0.15
+--gta4_ped_density_scale=0.15
+--gta4_scenario_ped_density_scale=0.15
+
+# --- Audio y Sistema ---
 --audio_maxqframes=32
 --gta4_stale_object_guard=true
---log_level=info
+--log_level=warn
 --gta4_native_frame_timeline=true
