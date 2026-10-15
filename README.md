@@ -17,9 +17,9 @@ Adaptación de **Liberty Recompiled** (recompilación de GTA IV de Xbox 360) org
 
 Capturas tomadas directamente del dispositivo ejecutando el juego en tiempo real:
 
-| Cinemática de Inicio (Niko Bellic en el Platypus) | Llegada al Muelle de Liberty City (Coche de Roman) |
-|:---:|:---:|
-| <img src="docs/android/images/oppo_niko_cargo.png" alt="Niko Bellic en Barco Platypus" width="450"/> | <img src="docs/android/images/oppo_roman_docks.png" alt="Roman Bellic Docks" width="450"/> |
+| Cinemática de Inicio (Barco Platypus) | Llegada al Muelle (Taxi de Roman) | Conduciendo en Broker (Hove Beach) |
+|:---:|:---:|:---:|
+| <img src="docs/android/images/oppo_niko_cargo.png" alt="Niko Bellic en Barco Platypus" width="300"/> | <img src="docs/android/images/oppo_roman_docks.png" alt="Roman Bellic Docks" width="300"/> | <img src="docs/android/images/oppo_gameplay_broker.png" alt="Broker Gameplay Taxi" width="300"/> |
 
 ---
 
@@ -28,10 +28,11 @@ Capturas tomadas directamente del dispositivo ejecutando el juego en tiempo real
 1. **Corrección del fallo en GPUs Mali (Mali-G57 / Dimensity):**
    - El juego original en Android sufría un cierre forzado (*crash SIGSEGV*) en `libGLES_mali.so` durante la compilación de shaders SPIR-V debido a que las GPUs Mali no soportan la instrucción `ClipDistance`.
    - Se integró un proxy Vulkan nativo (`libvulkan.so`) que parchea el bytecode de los shaders en memoria al vuelo, adaptándolos para que el driver de Mali los compile correctamente.
-2. **Ajustes de rendimiento para gama media:**
-   - Escala de renderizado interna optimizada a 360p que el Presenter de Vulkan escala a pantalla completa sin pérdida de controles ni deformaciones.
-   - Reducción de cascadas de sombras pesadas para aliviar el consumo de CPU y GPU.
-   - Buffer de audio AAudio a 2048 muestras para evitar cortes y chirridos en el sonido.
+2. **Optimización con AMD FSR 1.0 (Sin pérdida de nitidez):**
+   - Se configuró el reescalado dinámico FSR 1.0 a 720p (`--gta4_native_upscaler=fsr1`), aliviando el fillrate de la GPU mientras mantiene los bordes y texturas nítidos.
+   - Paginación y afinidad de hilos a los núcleos potentes Cortex-A76 (`--android_pin_hot_threads=true`).
+   - Reducción de draws innecesarios en reflejos de agua y sombras de objetos lejanos, eliminando más de 400 llamadas por fotograma.
+
 
 ---
 
@@ -84,6 +85,53 @@ Puedes instalarlo de dos formas:
      ```
   3. Abre la app: detectará los archivos, realizará la extracción y activará el botón **Play**.
   *(Una vez completada la instalación, puedes borrar la ISO de 7.8 GB para recuperar espacio).*
+
+
+---
+
+## ⚙️ Configuración Recomendada de Rendimiento (`args.txt`)
+
+Para obtener el mejor rendimiento en teléfonos de gama media y GPUs Mali (Dimensity 6020 / 700 / G57 / G52 / Snapdragon 680-778G) sin perder nitidez gráfica, coloca las siguientes líneas en tu archivo:
+`Android/data/com.libertyrecomp/files/args.txt`
+
+```ini
+# --- Resolución y Escalador AMD FSR 1.0 (720p nítido) ---
+--gta4_output_height_cap=720
+--gta4_native_upscaler=fsr1
+--gta4_fsr1_quality=performance
+--gta4_native_anti_aliasing=off
+--gta4_frame_limit=30
+--gta4_present_mode=vsync
+
+# --- CPU y Planificación de Hilos ---
+--android_pin_hot_threads=true
+--gta4_native_max_queued_frames=3
+
+# --- Distancia Dinámica y Guardia de FPS ---
+--gta4_draw_distance_scale=0.75
+--gta4_dynamic_draw_distance=true
+--gta4_dynamic_draw_distance_min=0.55
+--gta4_fps_guard=3
+
+# --- Población y Tráfico ---
+--gta4_traffic_density_scale=0.25
+--gta4_parked_car_density_scale=0.25
+--gta4_ped_density_scale=0.25
+--gta4_scenario_ped_density_scale=0.25
+
+# --- Reflejos, Sombras y Geometría ---
+--gta4_motion_blur=false
+--gta4_reflection_aa=off
+--gta4_reflection_capture_distance=near
+--gta4_reflection_resolution=original
+--gta4_native_water_reflection_min_indices=450
+--gta4_native_shadow_min_indices=400
+--gta4_native_vertex_cache_order=true
+
+# --- Audio y Estabilidad ---
+--audio_maxqframes=32
+--gta4_stale_object_guard=true
+```
 
 ---
 
