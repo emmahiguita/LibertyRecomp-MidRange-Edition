@@ -62,9 +62,8 @@ Capturas tomadas directamente del dispositivo ejecutando el juego en tiempo real
 ## 🚀 Guía de Instalación
 
 ### 1. Instalar el APK
-Descarga el APK desde la sección de **[Releases](https://github.com/emmahiguita/LibertyRecomp-MidRange-Edition/releases)**:
-* **`LibertyRecompAndroid-v0.5.9-mali-fixed.apk`** 👉 Para móviles con procesador **MediaTek / GPU Mali** (OPPO, Xiaomi, Realme, etc.).
-* **`LibertyRecompAndroid-v0.5.8.apk`** 👉 Para móviles con procesador **Snapdragon / GPU Adreno**.
+Descarga el archivo APK verificado desde nuestros **[Releases Oficiales](https://github.com/emmahiguita/LibertyRecomp-MidRange-Edition/releases)**:
+* ⭐ **`LibertyRecompAndroid-v0.5.9-mali-fixed.apk`** (53.7 MB) ➔ **APK 100% FUNCIONAL Y COMPROBADO** (con el parche nativo para GPUs Mali y optimización de rendimiento para gama media).
 
 ### 2. Extraer el Juego en el Teléfono
 Puedes instalarlo de dos formas:
